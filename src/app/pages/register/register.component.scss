@@ -1,0 +1,56 @@
+#container {
+  background-color: #111218;
+  height: 100vh;
+}
+
+.content{
+  background-color: #111218;
+  width: 60vw;
+  height: 80vh;
+  padding-left: 18vw;
+  padding-top: 5vh;
+}
+
+.content small {
+  font-size: 2.2vw;
+  color: white;
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+.form-component {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4vh;
+}
+
+.form-component label {
+  margin-bottom: 2vh;
+  color: #C8C6C6;
+  font-size: 0.8vw;
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+.form-component input {
+  background-color: #2c2c2c;
+  width: 20vw;
+  height: 4vh;
+  border: 1px solid rgba(0, 0, 0, 0.356);
+  color: white;
+  padding-left: 0.5vw;
+  border-radius: 0.2vw;
+}
+
+.form-button button {
+  margin-top: 4vh;
+  margin-bottom: 5vh;
+  width: 10vw;
+  height: 4.5vh;
+  background-color: #0D55FF;
+  border: none;
+  font-family: 'M PLUS 1p', sans-serif;
+  color: white;
+}
+
+.form-button button:hover {
+  background-color: #2062FF;
+}

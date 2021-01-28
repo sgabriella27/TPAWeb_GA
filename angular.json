@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "TPAWebGA"
+  "defaultProject": "TPAWebGA",
+  "cli": {
+    "analytics": "ecda9987-17be-4448-92c6-97d7c6708457"
+  }
 }

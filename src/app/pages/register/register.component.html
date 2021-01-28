@@ -1,0 +1,18 @@
+<div id="container">
+  <div class="content">
+    <small>CREATE YOUR ACCOUNT</small>
+    <form [formGroup]="registerForm" class="form">
+      <div class="form-component">
+        <label for="accountName">Account Name</label>
+        <input type="text" formControlName="accountName" id="accountName">
+      </div>
+      <div class="form-component">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" id="password">
+      </div>
+      <div class="form-button">
+        <button class="button-sign-in" (click)="onRegister()">Continue</button>
+      </div>
+    </form>
+  </div>
+</div>

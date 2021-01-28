@@ -1,0 +1,107 @@
+@import "src/style/color";
+
+#side-bar {
+  img {
+    height: 16vh;
+    width: 14vw;
+    margin-left: 4vw;
+    margin-top: 3vh;
+  }
+}
+
+.side-bar-text {
+  margin-left: 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 78vh;
+}
+
+.gift-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 6vh;
+}
+
+.recommended {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 9.5vh;
+}
+
+.recommended-component-a {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.discovery-queues {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 8vh;
+}
+
+.discovery-queues-a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.browse-categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 16vh;
+}
+
+.browse-categories-a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.browse-genre {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 29vh;
+}
+
+.browse-genre-a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.recently-viewed {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 6.5vh;
+}
+
+.recently-viewed-a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+small {
+  color: $nav-a-color;
+  font-size: 0.7vw;
+  font-family: "Helvetica";
+}
+
+a {
+  text-decoration: none;
+  color: $side-bar-text;
+  font-family: "Helvetica";
+  font-size: 0.85vw;
+}
+
+a:hover {
+  color: $side-bar-hover;
+}

@@ -1,0 +1,94 @@
+@import "src/style/color";
+
+footer {
+  background-color: $footer-color;
+
+  img {
+    height: 9vh;
+    width: 9vw;
+  }
+}
+
+.footer-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20vw;
+}
+
+.text-link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30vw;
+}
+
+.line {
+  text-decoration: none;
+  color: $nav-a-color;
+}
+
+.instagram {
+  img {
+    height: 4vh;
+    width: 2.1vw;
+  }
+}
+
+.youtube {
+  img {
+    height: 4vh;
+    width: 2.4vw;
+  }
+}
+
+.facebook {
+  img {
+    height: 3.3vh;
+    width: 1.8vw;
+  }
+}
+
+.twitter {
+  img {
+    height: 4vh;
+    width: 2.5vw;
+  }
+}
+
+.discord {
+  img {
+    height: 4vh;
+    width: 2.03vw;
+  }
+}
+
+.valve {
+  img {
+    height: 6vh;
+    width: 2.9vw;
+  }
+}
+
+.text {
+  font-family: "Helvetica";
+  text-decoration: none;
+  color: $nav-a-color;
+  font-size: 0.9vw;
+}
+
+.text:hover {
+  color: $side-bar-hover;
+}

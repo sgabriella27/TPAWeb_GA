@@ -1,0 +1,13 @@
+@import "src/style/color";
+
+#container {
+  background-image : linear-gradient($main-background, $main-background2);
+  height: 100vh;
+  display: flex;
+}
+
+#search-bar {
+  display: flex;
+  margin-top: 5vh;
+  margin-left: 10vw;
+}

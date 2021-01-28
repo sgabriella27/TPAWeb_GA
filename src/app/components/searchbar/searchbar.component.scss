@@ -1,0 +1,32 @@
+@import "src/style/color";
+
+#searchbar {
+  display: flex;
+  align-items: center;
+  background-color: $search-container;
+  width: 60vw;
+  height: 5vh;
+}
+
+#search-input {
+  border: 0.5px solid $nav-color;
+  outline: none;
+  background-color: $input-search;
+  width: 13vw;
+  height: 4vh;
+  border-radius: 0.3vw;
+  margin-left: 45vw;
+}
+
+#search-input:hover {
+  outline: none;
+  border: 1px solid $side-bar-hover;
+}
+
+#search-input::placeholder {
+  color: $nav-color;
+  font-style: italic;
+  font-family: "Helvetica";
+  text-align: center;
+  font-size: 1vw;
+}

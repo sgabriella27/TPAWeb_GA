@@ -1,0 +1,79 @@
+@import "src/style/color";
+
+header{
+  background: $nav-color;
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13vh;
+    width: 70vw;
+    position: relative;
+    margin-left: 4vw;
+  }
+}
+
+.navbar-component {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-component1 {
+  display: flex;
+  width: 35vw;
+  a{
+    margin-right: 1vw;
+    font-size: 0.95vw;
+  }
+}
+
+.navbar-component2 {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  margin-left: 70vw;
+  margin-bottom: 9vh;
+  width: 16vw;
+}
+
+.navbar-component3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 2vw;
+  width: 8vw;
+
+  a {
+    font-size: 0.8vw;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $nav-a-color;
+  font-family: 'Helvetica';
+}
+
+.logo-text {
+  color: white;
+}
+
+.logo-img {
+  width: 13vw;
+  height: 8.8vh;
+}
+
+.install-steam {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $install-button-color;
+  width: 8vw;
+  height: 3vh;
+
+  a {
+    color: white;
+    font-size: 0.8vw;
+  }
+}

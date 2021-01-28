@@ -1,0 +1,21 @@
+<div id="container">
+  <div class="content">
+    <div class="form-background">
+      <small class="sign-in-text">SIGN IN</small>
+      <form [formGroup]="loginForm" class="form">
+        <div class="form-component">
+          <label for="username">Steam Account Name</label>
+          <input type="text" formControlName="accountName" id="username">
+        </div>
+        <div class="form-component">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" id="password">
+        </div>
+        <div class="form-button">
+          <button class="button-sign-in" (click)="onSignIn()">Sign In</button>
+          <small>Dont have an account?<a href="/register"> Register!</a></small>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
