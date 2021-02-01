@@ -1,6 +1,8 @@
 @import "src/style/color";
 
 #side-bar {
+  user-select: none;
+
   img {
     height: 16vh;
     width: 14vw;

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {Apollo, gql} from 'apollo-angular';
 import {User} from '../../models/user';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
     password: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private apollo: Apollo) {
+  constructor(private fb: FormBuilder, private apollo: Apollo, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -37,6 +38,7 @@ export class RegisterComponent implements OnInit {
     }).subscribe(resp => {
       if (resp.data?.register) {
         alert('Register Success! :D');
+        this.router.navigate(['/login']).then();
       }
     });
 

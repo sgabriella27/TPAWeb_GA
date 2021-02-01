@@ -1,0 +1,199 @@
+@import "src/style/color";
+
+#container {
+  background-image : linear-gradient($main-background, $main-background2);
+  height: 87vh;
+  display: flex;
+}
+
+.content {
+  position: absolute;
+  top: 25vh;
+  left: 10vw;
+  display: flex;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 13vh;
+  z-index: 2;
+  user-select: none;
+
+  h1 {
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+
+  h3 {
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+}
+
+.form-container {
+  position: absolute;
+  background-color: $manage-button;
+  height: 73vh;
+  width: 50vw;
+  z-index: 2;
+  left: 30vw;
+  opacity: 0.7;
+  border-radius: 0.2vw;
+  border: 1px solid $input-border-focus;
+}
+
+form {
+  z-index: 3;
+  user-select: none;
+}
+
+.game-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10vh;
+  position: absolute;
+  left: 35vw;
+  top: 3vh;
+}
+
+.game-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10vh;
+  position: absolute;
+  left: 60vw;
+  top: 3vh;
+}
+
+.game-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10vh;
+  position: absolute;
+  left: 35vw;
+  top: 15vh;
+}
+
+.game-tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10vh;
+  position: absolute;
+  left: 60vw;
+  top: 15vh;
+}
+
+.game-developer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10vh;
+  position: absolute;
+  left: 35vw;
+  top: 27vh;
+}
+
+.game-publisher {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10vh;
+  position: absolute;
+  left: 60vw;
+  top: 27vh;
+}
+
+.game-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10vh;
+  position: absolute;
+  left: 35vw;
+  top: 38vh;
+}
+
+.game-slideshow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10vh;
+  position: absolute;
+  left: 60vw;
+  top: 38vh;
+}
+
+.game-system {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 10vh;
+  width: 20vw;
+  position: absolute;
+  left: 35vw;
+  top: 50vh;
+}
+
+.game-adult {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 8vw;
+  position: absolute;
+  left: 59vw;
+  top: 55vh;
+}
+
+.submit-button {
+  position: absolute;
+  left: 34.5vw;
+  top: 65vh;
+
+  button {
+    background-color: $input-form-text;
+    color: $nav-a-color;
+    width: 39vw;
+    height: 5vh;
+    border: none;
+    border-radius: 0.2vw;
+    font-family: "Helvetica";
+    font-size: 1.1vw;
+  }
+
+  button:hover {
+    outline: none;
+    border: 1px solid $input-border-focus;
+  }
+}
+
+.input-file {
+  border: none;
+  color: white;
+}
+
+label {
+  font-family: "Helvetica";
+  font-size: 1.3vw;
+  color: $nav-a-color;
+}
+
+.input-text {
+  height: 3.4vh;
+  width: 13vw;
+  background-color: $input-form-text;
+  border: none;
+  color: white;
+  padding-left: 0.3vw;
+  border-radius: 0.2vw;
+}
+
+.input-text:focus {
+  outline: none;
+  border: 1px solid $input-border-focus;
+}

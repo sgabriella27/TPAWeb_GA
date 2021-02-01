@@ -2,6 +2,7 @@
 
 header{
   background: $nav-color;
+  user-select: none;
 
   nav {
     display: flex;
@@ -76,4 +77,8 @@ a {
     color: white;
     font-size: 0.8vw;
   }
+}
+
+.line {
+  cursor: context-menu;
 }

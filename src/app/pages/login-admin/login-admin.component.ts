@@ -4,11 +4,11 @@ import {Apollo, gql} from 'apollo-angular';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-login-admin',
+  templateUrl: './login-admin.component.html',
+  styleUrls: ['./login-admin.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginAdminComponent implements OnInit {
 
   loginForm = this.fb.group({
     accountName: ['', Validators.required],
@@ -22,7 +22,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSignIn(): void {
+    const {accountName, password} = this.loginForm.value;
+    console.log(accountName, password);
     if (this.loginForm.invalid) {
+      return;
+    }
+
+    if (accountName !== 'admin' || password !== 'admin') {
       return;
     }
 
@@ -34,8 +40,9 @@ export class LoginComponent implements OnInit {
       const jwtToken = resp.data?.login;
       if (jwtToken) {
         localStorage.setItem('jwt', jwtToken);
-        this.router.navigate(['/']).then();
+        this.router.navigate(['/admin']).then();
       }
     });
   }
+
 }

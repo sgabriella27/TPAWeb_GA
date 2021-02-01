@@ -1,12 +1,11 @@
 <div id="container">
   <div class="content">
-    <div class="content">
-      <app-square></app-square>
+    <app-square></app-square>
       <div class="form-background">
-        <small class="sign-in-text">SIGN IN</small>
+        <small class="sign-in-text">ADMIN SIGN IN</small>
         <form [formGroup]="loginForm" class="form">
           <div class="form-component">
-            <label for="username">Steam Account Name</label>
+            <label for="username">Admin Username</label>
             <input type="text" formControlName="accountName" id="username">
           </div>
           <div class="form-component">
@@ -15,7 +14,6 @@
           </div>
           <div class="form-button">
             <button class="button-sign-in" (click)="onSignIn()">Sign In</button>
-            <small>Dont have an account?<a href="/register"> Register!</a></small>
           </div>
         </form>
       </div>

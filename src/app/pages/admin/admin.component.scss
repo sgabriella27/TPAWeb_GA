@@ -1,0 +1,171 @@
+@import "src/style/color";
+
+#container {
+  background-image : linear-gradient($main-background, $main-background2);
+  height: 87vh;
+  display: flex;
+}
+
+#squares {
+  display: flex;
+}
+
+.square-container {
+  margin-left: 10vw;
+  padding-top: 40vh;
+}
+
+.square-container1 {
+  margin-left: 13vw;
+  padding-top: 5vh;
+}
+
+.square-container2 {
+  margin-left: 7vw;
+  padding-top: 60vh;
+}
+
+.square-container3 {
+  margin-left: 15vw;
+  padding-top: 15vh;
+}
+
+.square-container4 {
+  margin-left: 9vw;
+  padding-top: 45vh;
+}
+
+.square-container5 {
+  margin-left: 9vw;
+  padding-top: 3vh;
+}
+
+.square {
+  height: 10vh;
+  width: 5vw;
+  background-color: $square-color;
+  opacity: 0.3;
+  transform: rotate(30deg);
+}
+
+.square1 {
+  height: 10vh;
+  width: 5vw;
+  background-color: $square-color;
+  opacity: 0.3;
+  transform: rotate(-50deg);
+}
+
+.square2 {
+  height: 10vh;
+  width: 5vw;
+  background-color: $square-color;
+  opacity: 0.3;
+  transform: rotate(-110deg);
+}
+
+.square3 {
+  height: 10vh;
+  width: 5vw;
+  background-color: $square-color;
+  opacity: 0.3;
+  transform: rotate(-10deg);
+}
+
+.admin-option-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 12vh;
+  position: absolute;
+  z-index: 2;
+  right: 26vw;
+  top: 25vh;
+  width: 40vw;
+  user-select: none;
+
+  h1 {
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+
+  h3 {
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+}
+
+.admin-option-content1 {
+  width: 33vw;
+  height: 10vh;
+  position: absolute;
+  right: 33vw;
+  top: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $manage-button;
+  transition: transform 1s ease;
+  user-select: none;
+
+  a {
+    text-decoration: none;
+    font-size: 2vw;
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+}
+
+.admin-option-content2 {
+  width: 33vw;
+  height: 10vh;
+  position: absolute;
+  right: 33vw;
+  top: 54vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $manage-button;
+  transition: transform 1s ease;
+  user-select: none;
+
+  a {
+    text-decoration: none;
+    font-size: 2vw;
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+}
+
+.admin-option-content3 {
+  width: 33vw;
+  height: 10vh;
+  position: absolute;
+  right: 33vw;
+  top: 68vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $manage-button;
+  transition: transform 1s ease;
+  user-select: none;
+
+  a {
+    text-decoration: none;
+    font-size: 2vw;
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+}
+
+.admin-option-content1:hover {
+  transform: scale(1.05);
+}
+
+.admin-option-content2:hover {
+  transform: scale(1.05);
+}
+
+.admin-option-content3:hover {
+  transform: scale(1.05);
+}

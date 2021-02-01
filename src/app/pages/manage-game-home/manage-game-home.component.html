@@ -1,0 +1,21 @@
+<app-admin-navbar></app-admin-navbar>
+<div id="container">
+  <div id="content-container">
+    <div id="content" *ngFor="let g of game">
+      <div class="img-content">
+        <img [src]="showFile(g.id)" alt="">
+      </div>
+      <div class="txt-content">
+        <h1>{{g.gameTitle}}</h1>
+      </div>
+      <div id="button-container">
+        <div class="update-button">
+          <a href="admin/update/game/{{g.id}}">Update!</a>
+        </div>
+        <div class="delete-button">
+          <a (click)="onDelete(g.id)">Delete!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

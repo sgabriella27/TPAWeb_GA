@@ -1,0 +1,56 @@
+<app-admin-navbar></app-admin-navbar>
+<div id="container">
+  <app-square></app-square>
+  <div class="content">
+    <div class="text-container">
+      <h1>Welcome, Admin</h1>
+      <h3>What game would you like to insert?</h3>
+    </div>
+    <div class="form-container"></div>
+    <form [formGroup]="createGameForm">
+      <div class="game-title">
+          <label for="">Game Title</label>
+          <input class="input-text" type="text" formControlName="gameTitle">
+      </div>
+      <div class="game-description">
+        <label for="">Game Description</label>
+        <input class="input-text" type="text" formControlName="gameDescription">
+      </div>
+      <div class="game-price">
+        <label for="">Game Price</label>
+        <input class="input-text" type="text" formControlName="gamePrice">
+      </div>
+      <div class="game-tag">
+        <label for="">Game Tags</label>
+        <input class="input-text" type="text" formControlName="gameTag">
+      </div>
+      <div class="game-developer">
+        <label for="">Game Developer</label>
+        <input class="input-text" type="text" formControlName="gameDeveloper">
+      </div>
+      <div class="game-publisher">
+        <label for="">Game Publisher</label>
+        <input class="input-text" type="text" formControlName="gamePublisher">
+      </div>
+      <div class="game-banner">
+        <label for="">Banner</label>
+        <input class="input-file" type="file" (change)="onBannerChange($event.target)">
+      </div>
+      <div class="game-slideshow">
+        <label for="">Slideshow</label>
+        <input class="input-file" type="file" multiple (change)="onSlideshowChange($event.target)">
+      </div>
+      <div class="game-system">
+        <label for="">Game System Requirements</label>
+        <input class="input-text" type="text" formControlName="gameSystemRequirement">
+      </div>
+      <div class="game-adult">
+        <label for="">Adult</label>
+        <input type="checkbox" formControlName="gameAdult">
+      </div>
+      <div class="submit-button">
+        <button (click)="onSubmit()">Submit!</button>
+      </div>
+    </form>
+  </div>
+</div>

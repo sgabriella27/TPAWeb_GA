@@ -1,0 +1,67 @@
+@import "src/style/color";
+
+#squares {
+  display: flex;
+}
+
+.square-container {
+  margin-left: 10vw;
+  padding-top: 40vh;
+}
+
+.square-container1 {
+  margin-left: 13vw;
+  padding-top: 5vh;
+}
+
+.square-container2 {
+  margin-left: 7vw;
+  padding-top: 60vh;
+}
+
+.square-container3 {
+  margin-left: 15vw;
+  padding-top: 15vh;
+}
+
+.square-container4 {
+  margin-left: 9vw;
+  padding-top: 45vh;
+}
+
+.square-container5 {
+  margin-left: 9vw;
+  padding-top: 3vh;
+}
+
+.square {
+  height: 10vh;
+  width: 5vw;
+  background-color: $square-color;
+  opacity: 0.3;
+  transform: rotate(30deg);
+}
+
+.square1 {
+  height: 10vh;
+  width: 5vw;
+  background-color: $square-color;
+  opacity: 0.3;
+  transform: rotate(-50deg);
+}
+
+.square2 {
+  height: 10vh;
+  width: 5vw;
+  background-color: $square-color;
+  opacity: 0.3;
+  transform: rotate(-110deg);
+}
+
+.square3 {
+  height: 10vh;
+  width: 5vw;
+  background-color: $square-color;
+  opacity: 0.3;
+  transform: rotate(-10deg);
+}

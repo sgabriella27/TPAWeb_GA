@@ -1,0 +1,47 @@
+@import "src/style/color";
+
+header{
+  background: $nav-color;
+
+  nav {
+    display: flex;
+    align-items: center;
+    height: 13vh;
+    width: 70vw;
+    position: relative;
+    margin-left: 4vw;
+    user-select: none;
+  }
+}
+
+.navbar-component1 {
+  display: flex;
+  align-items: center;
+  margin-left: 10vw;
+}
+
+.navbar-component2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 48vw;
+
+  small {
+    font-size: 1vw;
+    color: $nav-a-color;
+    font-family: "Helvetica";
+  }
+}
+
+.logo-text {
+  color: white;
+}
+
+.logo-img {
+  width: 13vw;
+  height: 8.8vh;
+}
+
+.line {
+  cursor: context-menu;
+}
