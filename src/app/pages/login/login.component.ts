@@ -35,6 +35,8 @@ export class LoginComponent implements OnInit {
       if (jwtToken) {
         localStorage.setItem('jwt', jwtToken);
         this.router.navigate(['/']).then();
+      } else {
+        alert('Account not Found!');
       }
     });
   }

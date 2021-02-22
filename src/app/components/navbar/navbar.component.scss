@@ -82,3 +82,39 @@ a {
 .line {
   cursor: context-menu;
 }
+
+.message-steam {
+  background-color: $message-background;
+  width: 2vw;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    width: 0.9vw;
+    height: 0.6vw;
+  }
+}
+
+.message-steam:hover {
+  background-color: $message-hover;
+}
+
+.logout {
+  a {
+    text-decoration: none;
+    color: $nav-a-color;
+    font-family: 'Helvetica';
+    cursor: pointer;
+    font-size: 0.8vw;
+  }
+}
+
+.navbar-component-login {
+  width: 9vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

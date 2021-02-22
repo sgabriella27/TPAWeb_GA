@@ -1,8 +1,5 @@
 <app-admin-navbar></app-admin-navbar>
 <div id="container">
-  <div class="add-game">
-    <button (click)="insertGamePage()">Add Game</button>
-  </div>
   <div id="content-container">
     <div id="content" *ngFor="let g of game">
       <div class="img-content">
@@ -10,13 +7,17 @@
       </div>
       <div class="txt-content">
         <h1>{{g.gameTitle}}</h1>
+        <span>Promo : {{g.promo?.discountPromo}}</span>
       </div>
       <div id="button-container">
+        <div class="add-button">
+          <a href="admin/insert/promo/{{g.id}}">Add Promo!</a>
+        </div>
         <div class="update-button">
-          <a href="admin/update/game/{{g.id}}">Update!</a>
+          <a href="admin/update/promo/{{g.id}}">Update Promo!</a>
         </div>
         <div class="delete-button">
-          <a (click)="onDelete(g.id)">Delete!</a>
+          <a (click)="onDelete(g.id)">Delete Promo!</a>
         </div>
       </div>
     </div>

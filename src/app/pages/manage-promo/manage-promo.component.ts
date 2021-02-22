@@ -4,12 +4,11 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-manage-game-home',
-  templateUrl: './manage-game-home.component.html',
-  styleUrls: ['./manage-game-home.component.scss']
+  selector: 'app-manage-promo',
+  templateUrl: './manage-promo.component.html',
+  styleUrls: ['./manage-promo.component.scss']
 })
-export class ManageGameHomeComponent implements OnInit {
-
+export class ManagePromoComponent implements OnInit {
   game: any[] = [];
 
   constructor(private apollo: Apollo, private sanitizer: DomSanitizer, private router: Router) {
@@ -22,6 +21,9 @@ export class ManageGameHomeComponent implements OnInit {
           id
           gameTitle
           gameBanner
+          promo {
+            discountPromo
+          }
         }
       }`
     }).subscribe(res => {
@@ -36,15 +38,13 @@ export class ManageGameHomeComponent implements OnInit {
 
   onDelete(id: number): void {
     this.apollo.mutate({
-      mutation: gql`mutation deleteGame($id: ID!) {
-        deleteGame(id: $id) {
+      mutation: gql`mutation deletePromo($id: ID!) {
+        deletePromo(id: $id){
           id
         }
       }`, variables: {id}
-    }).subscribe();
-  }
-
-  insertGamePage() {
-    this.router.navigate(['/admin/insert/game']).then();
+    }).subscribe(resp => {
+      alert('Delete Promo Success!');
+    });
   }
 }

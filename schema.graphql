@@ -1,0 +1,100 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Game {
+  createdAt: Time!
+  gameAdult: Boolean!
+  gameBanner: Int!
+  gameDescription: String!
+  gameDeveloper: String!
+  gamePrice: Int!
+  gamePublisher: String!
+  gameSlideshow: [GameMedia!]!
+  gameSystemRequirement: String!
+  gameTag: String!
+  gameTitle: String!
+  id: ID!
+  promo: Promo
+}
+
+type GameMedia {
+  contentType: String!
+  id: ID!
+}
+
+type Mutation {
+  createGame(input: newGame!): Game!
+  deleteGame(id: ID!): Game!
+  deletePromo(id: ID!): Promo!
+  insertPromo(input: newPromo!): Promo!
+  register(input: Register!): User!
+  updateGame(input: updateGame!): Game!
+  updatePromo(input: newPromo!): Promo!
+}
+
+type Promo {
+  discountPromo: Int!
+  endDate: Time!
+  id: ID!
+}
+
+type Query {
+  gameByID(id: ID!): Game!
+  getGame: [Game]!
+  getPromo(gameID: ID!): Promo!
+  getUser(jwtToken: String!): [User!]
+  hello: String!
+  login(accountName: String!, password: String!): String!
+}
+
+type User {
+  accountName: String!
+  id: ID!
+}
+
+input Register {
+  accountName: String!
+  password: String!
+}
+
+input newGame {
+  gameAdult: Boolean!
+  gameBanner: Upload!
+  gameDescription: String!
+  gameDeveloper: String!
+  gamePrice: Int!
+  gamePublisher: String!
+  gameSlideshow: [Upload!]!
+  gameSystemRequirement: String!
+  gameTag: String!
+  gameTitle: String!
+}
+
+input newPromo {
+  discountPromo: Int!
+  endDate: Time!
+  gameID: ID!
+}
+
+input updateGame {
+  gameAdult: Boolean!
+  gameBanner: Upload
+  gameDescription: String!
+  gameDeveloper: String!
+  gamePrice: Int!
+  gamePublisher: String!
+  gameSlideshow: [Upload]
+  gameSystemRequirement: String!
+  gameTag: String!
+  gameTitle: String!
+  id: ID!
+}
+
+
+scalar Upload
+
+scalar Time

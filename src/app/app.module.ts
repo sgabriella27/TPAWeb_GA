@@ -20,6 +20,9 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { ManageGameHomeComponent } from './pages/manage-game-home/manage-game-home.component';
 import { SquareComponent } from './components/square/square.component';
+import { InsertGamePromoComponent } from './pages/insert-game-promo/insert-game-promo.component';
+import { UpdateGamePromoComponent } from './pages/update-game-promo/update-game-promo.component';
+import { ManagePromoComponent } from './pages/manage-promo/manage-promo.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { SquareComponent } from './components/square/square.component';
     AdminComponent,
     AdminNavbarComponent,
     ManageGameHomeComponent,
-    SquareComponent
+    SquareComponent,
+    InsertGamePromoComponent,
+    UpdateGamePromoComponent,
+    ManagePromoComponent
   ],
     imports: [
         BrowserModule,

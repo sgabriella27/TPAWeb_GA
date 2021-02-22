@@ -17,6 +17,7 @@
   height: 4vh;
   border-radius: 0.3vw;
   margin-left: 45vw;
+  padding-left: 1vw;
 }
 
 #search-input:hover {
@@ -28,6 +29,5 @@
   color: $nav-color;
   font-style: italic;
   font-family: "Helvetica";
-  text-align: center;
   font-size: 1vw;
 }

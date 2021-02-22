@@ -15,10 +15,21 @@
     <div class="install-steam">
       <a href="">Install Steam</a>
     </div>
-    <div class="navbar-component3">
+    <div class="navbar-component3" *ngIf="user.length == 0">
       <a href="/login">login</a>
       <a href="" class="line"> | </a>
       <a href="">language</a>
+    </div>
+    <div class="navbar-component-login" *ngIf="user.length != 0">
+      <div class="message-steam">
+        <a href=""><img src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/header_menu_notifications.png" alt=""></a>
+      </div>
+      <div class="account-name">
+        <span>{{user.accountName}}</span>
+      </div>
+      <div class="logout">
+        <a (click)="logout()">logout</a>
+      </div>
     </div>
   </div>
 </nav>
