@@ -16,7 +16,7 @@
   width: 13vw;
   height: 4vh;
   border-radius: 0.3vw;
-  margin-left: 45vw;
+  margin-left: 8vw;
   padding-left: 1vw;
 }
 
@@ -30,4 +30,193 @@
   font-style: italic;
   font-family: "Helvetica";
   font-size: 1vw;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.your-store{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.5px solid $main-background2;
+  width: 7vw;
+  height: 5vh;
+
+  span {
+    color: $nav-a-color;
+    font-family: "Helvetica";
+    font-size: 0.9vw;
+  }
+}
+
+.your-store:hover {
+  cursor: pointer;
+  background-color: $side-bar-hover;
+  span {
+    color: $main-background2;
+  }
+}
+
+.store-content {
+  display: none;
+  position: absolute;
+  margin-top: 57.7vh;
+  margin-left: 8vw;
+  width: 15vw;
+  background-color: $dropdown-background;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.content {
+  padding: 0.4vw;
+  color: $login-background;
+  font-family: "Helvetica";
+  font-size: 0.7vw;
+}
+
+.content-byl {
+  padding: 0.4vw;
+  color: $side-bar-text;
+  font-family: "Helvetica";
+  font-size: 0.7vw;
+}
+
+.content:hover {
+  background-color: $main-background2;
+  color: white;
+  cursor: pointer;
+}
+
+.your-store:hover .store-content {
+  display: block;
+}
+
+.browse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.5px solid $main-background2;
+  width: 7vw;
+  height: 5vh;
+
+  span {
+    color: $nav-a-color;
+    font-family: "Helvetica";
+    font-size: 0.9vw;
+  }
+}
+
+.browse:hover {
+  cursor: pointer;
+  background-color: $side-bar-hover;
+  span {
+    color: $main-background2;
+  }
+}
+
+.browse-content {
+  display: none;
+  position: absolute;
+  margin-top: 51vh;
+  margin-left: 8vw;
+  width: 15vw;
+  background-color: $dropdown-background;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.content-browse {
+  padding: 0.4vw;
+  color: $login-background;
+  font-family: "Helvetica";
+  font-size: 0.7vw;
+}
+
+.content-browse-text {
+  padding: 0.4vw;
+  color: $side-bar-text;
+  font-family: "Helvetica";
+  font-size: 0.7vw;
+}
+
+.content-browse:hover {
+  background-color: $main-background2;
+  color: white;
+  cursor: pointer;
+}
+
+.browse:hover .browse-content {
+  display: block;
+}
+
+.points-shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.5px solid $main-background2;
+  width: 7vw;
+  height: 5vh;
+
+  span {
+    color: $nav-a-color;
+    font-family: "Helvetica";
+    font-size: 0.9vw;
+  }
+}
+
+.points-shop:hover {
+  cursor: pointer;
+  background-color: $side-bar-hover;
+  span {
+    color: $main-background2;
+  }
+}
+
+.news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.5px solid $main-background2;
+  width: 7vw;
+  height: 5vh;
+
+  span {
+    color: $nav-a-color;
+    font-family: "Helvetica";
+    font-size: 0.9vw;
+  }
+}
+
+.news:hover {
+  cursor: pointer;
+  background-color: $side-bar-hover;
+  span {
+    color: $main-background2;
+  }
+}
+
+.steam-labs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.5px solid $main-background2;
+  width: 7vw;
+  height: 5vh;
+
+  span {
+    color: $nav-a-color;
+    font-family: "Helvetica";
+    font-size: 0.9vw;
+  }
+}
+
+.steam-labs:hover {
+  cursor: pointer;
+  background-color: $side-bar-hover;
+  span {
+    color: $main-background2;
+  }
 }

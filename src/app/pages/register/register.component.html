@@ -10,6 +10,12 @@
         <label for="password">Password</label>
         <input type="password" formControlName="password" id="password">
       </div>
+      <div class="captcha">
+        <re-captcha
+          (resolved)="resolved($event)"
+          siteKey="6Le0yHoaAAAAAEKFFq1g5rDwqL7ZDjXJ_To-c35_"
+        ></re-captcha>
+      </div>
       <div class="form-button">
         <button class="button-sign-in" (click)="onRegister()">Continue</button>
       </div>

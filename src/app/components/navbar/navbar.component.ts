@@ -29,13 +29,17 @@ export class NavbarComponent implements OnInit {
   }
 
   firstDisplay(userID: string): void {
+    console.log('asd');
     this.apollo.query<{ getUser: any }>({
       query: gql` query getUser($jwtToken: String!){
         getUser(jwtToken: $jwtToken) {
-          accountName
+          displayName,
+          profilePic,
+          wallet
         }
-      }`, variables: {userID: localStorage.getItem('jwt')}
+      }`, variables: {jwtToken: localStorage.getItem('jwt')}
     }).subscribe(res => {
+      console.log(res.data);
       this.user = res.data?.getUser;
       console.log(this.user.accountName);
     });

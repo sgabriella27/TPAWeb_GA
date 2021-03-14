@@ -3,6 +3,37 @@
 schema {
   query: Query
   mutation: Mutation
+  subscription: Subscription
+}
+
+type CommunityAsset {
+  asset: String!
+  comments(page: Int!): [CommunityAssetComment]!
+  dislike: Int!
+  id: ID!
+  like: Int!
+  user: User!
+}
+
+type CommunityAssetComment {
+  comment: String!
+  id: ID!
+  user: User!
+}
+
+type Discussion {
+  comments(page: Int!): [DiscussionComment]!
+  description: String!
+  game: Game!
+  id: ID!
+  title: String!
+  user: User!
+}
+
+type DiscussionComment {
+  comment: String!
+  id: ID!
+  user: User!
 }
 
 type Game {
@@ -21,19 +52,89 @@ type Game {
   promo: Promo
 }
 
+type GameItem {
+  game: Game!
+  gameID: ID!
+  gameItemDesc: String!
+  gameItemImg: String!
+  gameItemName: String!
+  id: ID!
+  transaction: [MarketTransaction]!
+}
+
 type GameMedia {
   contentType: String!
   id: ID!
 }
 
+type MarketGameItem {
+  gameItem: GameItem!
+  gameItemID: ID!
+  price: Int!
+  type: String!
+  user: User!
+  userID: ID!
+}
+
+type MarketListing {
+  gameItem: GameItem!
+  gameItemID: ID!
+  price: Int!
+  type: String!
+  user: User!
+  userID: ID!
+}
+
+type MarketTransaction {
+  createdAt: Time!
+  gameItemID: ID!
+  price: Int!
+}
+
 type Mutation {
+  addWalletAmount(amount: Int!, userID: ID!): User!
   createGame(input: newGame!): Game!
   deleteGame(id: ID!): Game!
   deletePromo(id: ID!): Promo!
+  dislikeCommunityAsset(id: ID!): CommunityAsset!
+  helpfulReview(id: ID!): Review!
+  insertBuyItem(buyerID: ID!, gameItemID: ID!, userID: ID!): String!
+  insertCommunityAsset(input: newCommunityAsset!): CommunityAsset!
+  insertCommunityComment(input: newCommunityComment): CommunityAssetComment!
+  insertCommunityVidImg(imgVid: String!, userID: ID!): CommunityAsset!
+  insertDiscussion(input: newDiscussion): Discussion!
+  insertDiscussionComment(input: newDiscussionComment): DiscussionComment!
+  insertMarketItem(input: newMarketItem!): MarketGameItem!
+  insertNewReview(desc: String!, gameID: ID!, recommend: Boolean!, userID: ID!): Review!
+  insertPointTransaction(itemID: ID!, userID: ID!): Boolean!
+  insertPointsItem(input: newPointItem!): PointItem!
   insertPromo(input: newPromo!): Promo!
+  insertRedeemCode(amountMoney: Int!, code: String!): RedeemCode!
+  insertReview(input: newReview): Review!
+  insertReviewComment(input: newReviewComment): ReviewComment!
+  insertSellItem(gameItemID: ID!, sellerID: ID!, userID: ID!): String!
+  likeCommunityAsset(id: ID!): CommunityAsset!
+  notHelpfulReview(id: ID!): Review!
+  redeemWalletCode(code: String!, userID: ID!): User!
+  reduceWalletAmount(amount: Int!, userID: ID!): User!
   register(input: Register!): User!
+  sendOTP(input: Int!): Int
+  updateAvatar(id: ID!, profilePic: String!): User!
+  updateBackground(backgroundID: ID!, id: ID!): User!
+  updateBadge(badgeID: ID!, id: ID!): User!
+  updateFrame(frameID: ID!, id: ID!): User!
   updateGame(input: updateGame!): Game!
+  updateMiniBackground(id: ID!, miniBgID: ID!): User!
   updatePromo(input: newPromo!): Promo!
+  updateTheme(id: ID!, theme: String!): User!
+  updateUser(input: updateUser): User!
+}
+
+type PointItem {
+  id: ID!
+  itemImg: String!
+  itemPoints: Int!
+  itemType: String!
 }
 
 type Promo {
@@ -44,21 +145,109 @@ type Promo {
 
 type Query {
   gameByID(id: ID!): Game!
+  getAllUser(page: Int!): [User]!
+  getCommunityAsset: [CommunityAsset]!
+  getCommunityAssetByID(id: ID!): CommunityAsset!
+  getCommunityReview: [Review]!
+  getDiscussion: [Discussion]!
+  getDiscussionByID(id: ID!): Discussion!
   getGame: [Game]!
+  getGameItem(page: Int!): [GameItem]!
+  getGameItemByID(id: ID!): GameItem!
+  getMarketGameItemByID(id: ID!): [MarketGameItem]!
+  getMarketListing: [MarketListing]!
+  getPointsItem: [PointItem]!
   getPromo(gameID: ID!): Promo!
-  getUser(jwtToken: String!): [User!]
+  getRedeemCode(code: String!): RedeemCode!
+  getReviewByID(id: ID!): Review!
+  getUser(jwtToken: String!): User!
   hello: String!
   login(accountName: String!, password: String!): String!
 }
 
+type RedeemCode {
+  code: String!
+  moneyAmount: Int!
+}
+
+type Review {
+  comments(page: Int!): [ReviewComment]!
+  description: String!
+  downvote: Int!
+  game: Game!
+  helpful: Int!
+  id: ID!
+  notHelpful: Int!
+  recommended: Boolean!
+  upvote: Int!
+  user: User!
+}
+
+type ReviewComment {
+  comment: String!
+  id: ID!
+  user: User!
+}
+
+type Subscription {
+  messageAdded(itemID: Int!): String!
+}
+
 type User {
   accountName: String!
+  background: PointItem
+  backgroundID: Int
+  badge: PointItem
+  badgeID: Int
+  country: String!
+  customURL: String!
+  displayName: String!
+  frame: PointItem
+  frameID: Int
   id: ID!
+  miniBackground: PointItem
+  miniBackgroundID: Int!
+  ownedBackground: [PointItem]!
+  ownedBadge: [PointItem]!
+  ownedFrame: [PointItem]!
+  ownedMiniBackground: [PointItem]!
+  points: Int!
+  profilePic: String!
+  realName: String!
+  summary: String!
+  theme: String!
+  wallet: Int!
 }
 
 input Register {
   accountName: String!
   password: String!
+}
+
+input newCommunityAsset {
+  id: ID!
+  itemImg: String!
+  itemPoints: Int!
+}
+
+input newCommunityComment {
+  comment: String!
+  id: ID!
+  userID: ID!
+}
+
+input newDiscussion {
+  description: String!
+  gameID: ID!
+  id: ID!
+  title: String!
+  userID: ID!
+}
+
+input newDiscussionComment {
+  comment: String!
+  id: ID!
+  userID: ID!
 }
 
 input newGame {
@@ -74,10 +263,38 @@ input newGame {
   gameTitle: String!
 }
 
+input newMarketItem {
+  gameItemID: ID!
+  price: Int!
+  type: String!
+  userID: ID!
+}
+
+input newPointItem {
+  id: ID!
+  itemImg: String!
+  itemPoints: Int!
+  itemType: String!
+}
+
 input newPromo {
   discountPromo: Int!
   endDate: Time!
   gameID: ID!
+}
+
+input newReview {
+  description: String!
+  gameID: ID!
+  id: ID!
+  recommended: Boolean!
+  userID: ID!
+}
+
+input newReviewComment {
+  comment: String!
+  id: ID!
+  userID: ID!
 }
 
 input updateGame {
@@ -94,7 +311,16 @@ input updateGame {
   id: ID!
 }
 
+input updateUser {
+  country: String!
+  customURL: String!
+  displayName: String!
+  id: ID!
+  realName: String!
+  summary: String!
+}
 
-scalar Upload
 
 scalar Time
+
+scalar Upload

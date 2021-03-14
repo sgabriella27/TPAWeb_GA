@@ -4,10 +4,16 @@
     <div class="navbar-logo">
       <a href="/"><img src="../../assets/logo_steam.svg" class="logo-img"></a>
     </div>
-    <div class="navbar-component1">
+    <div class="navbar-component1" *ngIf="user.length == 0">
       <a href="">STORE</a>
-      <a href="">COMMUNITY</a>
+      <a href="/community">COMMUNITY</a>
       <a href="">ABOUT</a>
+      <a href="">SUPPORT</a>
+    </div>
+    <div class="navbar-component1" *ngIf="user.length != 0">
+      <a href="">STORE</a>
+      <a href="/community">COMMUNITY</a>
+      <a href="">CHAT</a>
       <a href="">SUPPORT</a>
     </div>
   </div>
@@ -24,11 +30,21 @@
       <div class="message-steam">
         <a href=""><img src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/header_menu_notifications.png" alt=""></a>
       </div>
-      <div class="account-name">
-        <span>{{user.accountName}}</span>
+      <div class="wallet-acc-logout">
+        <div class="acc-logout">
+          <div class="account-name">
+            <a href="/profile">{{user.displayName}}</a>
+          </div>
+          <div class="logout">
+            <a (click)="logout()">logout</a>
+          </div>
+        </div>
+        <div class="wallet">
+          <a href="top-up/wallet">Rp.{{user.wallet}}</a>
+        </div>
       </div>
-      <div class="logout">
-        <a (click)="logout()">logout</a>
+      <div class="profile-pic">
+        <img src="assets/{{user.profilePic}}" alt="">
       </div>
     </div>
   </div>
