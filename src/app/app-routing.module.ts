@@ -33,6 +33,9 @@ import {ManageUserComponent} from './pages/manage-user/manage-user.component';
 import {AddImgvidComponent} from './pages/add-imgvid/add-imgvid.component';
 import {AddReviewComponent} from './pages/add-review/add-review.component';
 import {EditProfileHomeComponent} from './pages/edit-profile-home/edit-profile-home.component';
+import {ChatRoomComponent} from './pages/chat-room/chat-room.component';
+import {ChatHomeComponent} from './pages/chat-home/chat-home.component';
+import {BadgePageComponent} from './pages/badge-page/badge-page.component';
 
 const routes: Routes = [
   {
@@ -113,7 +116,7 @@ const routes: Routes = [
     component: EditThemeComponent
   },
   {
-    path: 'profile',
+    path: 'profile/:customURL',
     component: ProfileComponent
   },
   {
@@ -159,6 +162,18 @@ const routes: Routes = [
   {
     path: 'edit/profile/home',
     component: EditProfileHomeComponent
+  },
+  {
+    path: 'chat/room/:id',
+    component: ChatRoomComponent
+  },
+  {
+    path: 'chat/home',
+    component: ChatHomeComponent
+  },
+  {
+    path: 'badge/page',
+    component: BadgePageComponent
   }
 ];
 

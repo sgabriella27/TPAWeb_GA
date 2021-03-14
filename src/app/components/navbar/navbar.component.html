@@ -33,7 +33,7 @@
       <div class="wallet-acc-logout">
         <div class="acc-logout">
           <div class="account-name">
-            <a href="/profile">{{user.displayName}}</a>
+            <a href="/profile{{user.customURL}}">{{user.displayName}}</a>
           </div>
           <div class="logout">
             <a (click)="logout()">logout</a>

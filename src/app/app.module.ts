@@ -8,7 +8,7 @@ import {LoginComponent} from './pages/login/login.component';
 import {RegisterComponent} from './pages/register/register.component';
 import {GraphQLModule} from './graphql.module';
 import {HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HomeComponent} from './pages/home/home.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
@@ -56,6 +56,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GameDetailComponent } from './pages/game-detail/game-detail.component';
 import { ChatHomeComponent } from './pages/chat-home/chat-home.component';
+import { ChatRoomComponent } from './pages/chat-room/chat-room.component';
+import { BadgePageComponent } from './pages/badge-page/badge-page.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +108,8 @@ import { ChatHomeComponent } from './pages/chat-home/chat-home.component';
     EditProfileHomeComponent,
     GameDetailComponent,
     ChatHomeComponent,
+    ChatRoomComponent,
+    BadgePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,7 +119,8 @@ import { ChatHomeComponent } from './pages/chat-home/chat-home.component';
     ReactiveFormsModule,
     RecaptchaModule,
     ChartsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

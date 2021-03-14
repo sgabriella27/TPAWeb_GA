@@ -6,6 +6,15 @@ schema {
   subscription: Subscription
 }
 
+type Card {
+  badge: PointItem
+  badgeID: Int
+  cardImg: String!
+  id: ID!
+  ownedBadge: [PointItem]!
+  status: String!
+}
+
 type CommunityAsset {
   asset: String!
   comments(page: Int!): [CommunityAssetComment]!
@@ -34,6 +43,20 @@ type DiscussionComment {
   comment: String!
   id: ID!
   user: User!
+}
+
+type FriendRequest {
+  friend: User!
+  friendID: ID!
+  user: User!
+  userID: ID!
+}
+
+type Friends {
+  friend: User!
+  friendID: ID!
+  user: User!
+  userID: ID!
 }
 
 type Game {
@@ -99,8 +122,12 @@ type MarketTransaction {
 }
 
 type Mutation {
+  addReported(input: ID!): User!
   addWalletAmount(amount: Int!, userID: ID!): User!
   createGame(input: newGame!): Game!
+  createReportRequest(input: InputRequestReport!): ReportRequest!
+  createSuspensionList(input: InputSuspensionList!): String!
+  createUnsuspensionRequest(input: InputUnsuspensionRequest!): UnsuspensionRequest!
   deleteGame(id: ID!): Game!
   deletePromo(id: ID!): Promo!
   dislikeCommunityAsset(id: ID!): CommunityAsset!
@@ -120,6 +147,7 @@ type Mutation {
   insertReview(input: newReview): Review!
   insertReviewComment(input: newReviewComment): ReviewComment!
   insertSellItem(gameItemID: ID!, sellerID: ID!, userID: ID!): String!
+  insertUserChat(message: String!, userID: ID!): String!
   likeCommunityAsset(id: ID!): CommunityAsset!
   notHelpfulReview(id: ID!): Review!
   redeemWalletCode(code: String!, userID: ID!): User!
@@ -151,9 +179,12 @@ type Promo {
 }
 
 type Query {
+  deleteReport(id: ID!): String!
   gameByID(id: ID!): Game!
   getAllGame: [Game]!
   getAllUser(page: Int!): [User]!
+  getCard: [Card]!
+  getCardByID(id: ID!): [Card]!
   getCommunityAsset: [CommunityAsset]!
   getCommunityAssetByID(id: ID!): CommunityAsset!
   getCommunityReview: [Review]!
@@ -167,7 +198,10 @@ type Query {
   getPointsItem: [PointItem]!
   getPromo(gameID: ID!): Promo!
   getRedeemCode(code: String!): RedeemCode!
+  getReportRequest: [ReportRequest!]!
   getReviewByID(id: ID!): Review!
+  getSuspensionList: [SuspensionList!]!
+  getUnsuspensionRequest: [UnsuspensionRequest!]!
   getUser(jwtToken: String!): User!
   hello: String!
   login(accountName: String!, password: String!): String!
@@ -176,6 +210,15 @@ type Query {
 type RedeemCode {
   code: String!
   moneyAmount: Int!
+}
+
+type ReportRequest {
+  id: ID!
+  reason: String!
+  reporter: User!
+  reporter_id: ID!
+  suspected: User!
+  suspected_id: ID!
 }
 
 type Review {
@@ -199,6 +242,20 @@ type ReviewComment {
 
 type Subscription {
   messageAdded(itemID: Int!): String!
+  privateChatAdded(userID: ID!): String!
+}
+
+type SuspensionList {
+  reason: String!
+  suspended: Boolean!
+  user: User!
+  user_id: ID!
+}
+
+type UnsuspensionRequest {
+  reason: String!
+  user: User!
+  user_id: ID!
 }
 
 type User {
@@ -212,7 +269,10 @@ type User {
   displayName: String!
   frame: PointItem
   frameID: Int
+  friendRequest: [FriendRequest]!
+  friends: [Friends]!
   id: ID!
+  level: Int!
   miniBackground: PointItem
   miniBackgroundID: Int!
   ownedBackground: [PointItem]!
@@ -222,9 +282,28 @@ type User {
   points: Int!
   profilePic: String!
   realName: String!
+  reported: Int!
   summary: String!
+  suspended: Boolean
   theme: String!
   wallet: Int!
+}
+
+input InputRequestReport {
+  reason: String!
+  reporter_id: ID!
+  suspected_id: ID!
+}
+
+input InputSuspensionList {
+  reason: String!
+  suspended: Boolean!
+  user_id: ID!
+}
+
+input InputUnsuspensionRequest {
+  reason: String!
+  user_email: String!
 }
 
 input Register {

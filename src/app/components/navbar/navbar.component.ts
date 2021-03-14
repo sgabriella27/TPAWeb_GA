@@ -35,7 +35,8 @@ export class NavbarComponent implements OnInit {
         getUser(jwtToken: $jwtToken) {
           displayName,
           profilePic,
-          wallet
+          wallet,
+          customURL
         }
       }`, variables: {jwtToken: localStorage.getItem('jwt')}
     }).subscribe(res => {
