@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div id="container" *ngIf="review">
+  <div class="upper-content">
+    <div class="img">
+      <img src="assets/{{review.user.profilePic}}" alt="">
+    </div>
+    <div class="text">
+      <span>{{review.user.displayName}}</span>
+    </div>
+  </div>
+  <div class="center-content">
+    <div class="recommend-description">
+      <span>{{review.recommended ? 'Recommended' : 'Not Recommended'}}</span>
+      <small>{{review.description}}</small>
+      <small>Was this review helpful?</small>
+      <div class="helpful-not">
+        <div (click)="onHelpful(review.id)" class="helpful">Yes</div>
+        <div (click)="onNothelptul(review.id)" class="not-helpful">No</div>
+      </div>
+      <div class="count-helpful-not">
+        <small>{{review.helpful}} people found this review helpful</small>
+        <small>{{review.notHelpful}} people found this review helpful</small>
+      </div>
+    </div>
+    <div class="game-content">
+      <div class="game-img">
+        <img [src]="showFile(review.game?.id)" alt="">
+      </div>
+      <div class="game-title">
+        <span>{{review.game?.gameTitle}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="comment-header">
+    <span>Comments</span>
+  </div>
+  <div class="comments-container" *ngFor="let r of review.comments">
+    <div class="comments">
+      <div class="account">
+        <div class="account-img">
+          <img src="assets/{{r.user.profilePic}}" alt="">
+        </div>
+        <div class="comment-account">
+          <span>{{r.user.displayName}}</span>
+        </div>
+      </div>
+      <div class="comment-content">
+        <span>{{r.comment}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="button-paginate">
+    <button (click)="prevPage()"> < </button>
+    <button (click)="nextPage()"> > </button>
+  </div>
+  <form [formGroup]="commentForm">
+    <div class="input-submit">
+      <input type="text" formControlName="comment">
+      <button (click)="addComment()">Post Comment</button>
+    </div>
+  </form>
+</div>

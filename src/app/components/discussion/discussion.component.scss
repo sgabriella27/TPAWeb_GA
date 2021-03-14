@@ -1,0 +1,62 @@
+@import "src/style/color";
+
+#container{
+  background-color: $tab-control-background;
+  width: 55vw;
+  margin-left: 20vw;
+  margin-top: 0.5vh;
+  user-select: none;
+}
+
+.game-header{
+  display: flex;
+  align-items: center;
+  background-color: #080b0e;
+  border: 1px solid transparent;
+  color: $points-type;
+
+  img{
+    width: 120px;
+    margin-right: 1vw;
+    padding: 10px 20px;
+  }
+}
+
+.card{
+  background-color: $card-background;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  color: #d6d6d4;
+  letter-spacing: 1px;
+  transition: 0.4s;
+  cursor:pointer;
+
+  p{
+    font-size: 18px;
+    font-family: "Helvetica";
+  }
+
+  small {
+    font-family: "Helvetica";
+    color: $side-bar-text;
+  }
+ }
+
+.card:hover{
+  transform: scale(1.017);
+  background-color: $card-hover;
+  color: white;
+}
+
+.card:active{
+  background-color: #070d11;
+  color: white;
+  outline: none;
+}
+
+.game-title {
+  h1 {
+    font-family: "Helvetica";
+    font-size: 1.6vw;
+  }
+}

@@ -1,0 +1,33 @@
+@import "src/style/color";
+
+.tabs {
+  display: flex;
+  align-items: center;
+  width: 55vw;
+  margin-left: 20.1vw;
+  margin-top: 5vh;
+  border-bottom: 6px solid $tab-control-background;
+}
+
+.tabTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 10vw;
+  font-family: "Helvetica";
+  color: $points-type;
+  margin-left: 2vw;
+  margin-bottom: -0.1vh;
+}
+
+.tabTitle:hover {
+  cursor: pointer;
+}
+
+.tabActive {
+  background-color: $tab-control-background;
+  border-top: 1px solid $input-border-focus;
+  border-right: 1px solid $input-border-focus;
+  border-left: 1px solid $input-border-focus;
+}

@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<main>
+  <div id="container" *ngIf="user">
+    <div class="header">
+      <span>FRAME</span>
+    </div>
+    <div class="content">
+      <div class="profile">
+        <div class="profile-text">
+          <span>Current Mini Background</span>
+        </div>
+        <div class="mini-background">
+          <img src="assets/Point%20Shop/{{user.miniBackground.itemImg}}" alt="">
+        </div>
+      </div>
+      <div class="owned-minibg">
+        <div class="minibg">
+          <span>Your Mini Background</span>
+        </div>
+        <div class="list-miniBg">
+          <div class="miniBgs" *ngFor="let f of user.ownedMiniBackground" (click)="saveMiniBg(f.id)">
+            <img src="assets/Point%20Shop/{{f.itemImg}}" (click)="changeMiniBg(f.itemImg)" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,218 @@
+@import "src/style/color";
+
+#container {
+  background-color: $main-background2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15vw;
+  padding-top: 3vh;
+  user-select: none;
+}
+
+.game-img {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 10vw;
+  }
+}
+
+.game-title {
+  display: flex;
+  align-items: center;
+  padding-left: 1vw;
+
+  span {
+    color: white;
+    font-family: "Helvetica";
+    font-size: 2vw;
+  }
+}
+
+.content-upper {
+  display: flex;
+}
+
+.content {
+  background-image : linear-gradient($discussion-background, $main-background);
+  width: 55vw;
+  padding: 1.5vw;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  box-shadow: 3px 3px 3px 3px $login-admin-container;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.account-name {
+  padding-left: 1vw;
+
+  span {
+    color: white;
+    font-size: 1vw;
+    font-family: "Helvetica";
+  }
+}
+
+.title-description {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3vh;
+
+  span {
+    color: white;
+    font-family: "Helvetica";
+    font-size: 2vw;
+  }
+
+  p {
+    color: $points-type;
+    font-family: "Helvetica";
+    font-size: 1vw;
+    padding-left: 0.1vw;
+    padding-top: 0.2vh;
+  }
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  background-color: $card-background;
+  width: 57.5vw;
+  height: 7vh;
+  padding-left: 1vw;
+  margin-top: 2vh;
+
+  span {
+    color: $side-bar-hover;
+    font-family: "Helvetica";
+    font-size: 1.5vw;
+  }
+}
+
+.comments {
+  margin-left: 1vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-account {
+  display: flex;
+  align-items: center;
+  padding-top: 2vh;
+}
+
+.comment-img {
+  img {
+    width: 2vw;
+  }
+}
+
+.comment-name {
+  padding-left: 1vw;
+
+  span {
+    font-family: "Helvetica";
+    color: $side-bar-hover;
+  }
+}
+
+.comment-content {
+  span {
+    font-family: "Helvetica";
+    color: $points-type;
+    font-size: 0.8vw;
+  }
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 57.5vw;
+}
+
+.button-paginate {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  width: 4vw;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1vw;
+    height: 2vh;
+    background-color: $paginate-button-background;
+    border: none;
+    color: $points-type;
+  }
+
+  button:hover {
+    background-color: $paginate-button;
+    color: $paginate-button-background;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+.input-submit {
+  display: flex;
+  justify-content: space-between;
+  width: 66vw;
+  padding-top: 3vh;
+  padding-bottom: 28vh;
+
+  button {
+    background-color: $input-form-text;
+    color: $nav-a-color;
+    border: none;
+    border-radius: 0.2vw;
+    font-family: "Helvetica";
+    font-size: 0.9vw;
+    width: 8vw;
+    height: 5vh;
+  }
+
+  button:hover {
+    outline: none;
+    border: 1px solid $input-border-focus;
+    cursor: pointer;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  input {
+    width: 55vw;
+    height: 5vh;
+    background-color: $input-form-text;
+    border: none;
+    color: white;
+    padding-left: 0.3vw;
+    border-radius: 0.2vw;
+  }
+
+  input:focus {
+    outline: none;
+    border: 1px solid $input-border-focus;
+  }
+}
+
+.account-img {
+  img {
+    width: 5vw;
+  }
+}

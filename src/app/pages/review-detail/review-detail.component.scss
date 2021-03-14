@@ -1,0 +1,277 @@
+@import "src/style/color";
+
+#container {
+  background-color: $main-background2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3vh;
+  user-select: none;
+}
+
+.upper-content {
+  display: flex;
+  align-items: center;
+  background-color: $card-background;
+  width: 65vw;
+  height: 10vh;
+  padding-left: 1vw;
+}
+
+.text {
+  padding-left: 2vw;
+
+  span {
+    font-family: "Helvetica";
+    color: white;
+    font-size: 2vw;
+  }
+}
+
+.img {
+  img {
+    width: 3vw;
+  }
+}
+
+.center-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
+  width: 66vw;
+  background-color: $card-background;
+}
+
+.center-content:hover {
+  border: 1px solid $input-border-focus;
+}
+
+.recommend-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 3vw;
+
+  span {
+    color: $side-bar-text;
+    font-size: 1.5vw;
+    font-family: "Helvetica";
+  }
+
+  small {
+    color: $points-type;
+    font-family: "Helvetica";
+    font-size: 1vw;
+    padding-top: 1vh;
+  }
+}
+
+.game-img {
+  img {
+    width: 20vw;
+    padding-right: 2vw;
+    padding-top: 2vh;
+  }
+}
+
+.game-title {
+  padding-bottom: 2vh;
+
+  span {
+    font-family: "Helvetica";
+    font-size: 1.5vw;
+    color: white;
+  }
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  background-color: $card-background;
+  width: 65vw;
+  height: 7vh;
+  padding-left: 1vw;
+  margin-top: 2vh;
+
+  span {
+    color: $side-bar-hover;
+    font-family: "Helvetica";
+    font-size: 1.5vw;
+  }
+}
+
+.comment-account {
+  display: flex;
+  align-items: center;
+  padding-left: 1vw;
+
+  span {
+    font-family: "Helvetica";
+    color: $side-bar-hover;
+  }
+}
+
+.comment-content {
+  span {
+    font-family: "Helvetica";
+    color: $points-type;
+    font-size: 0.8vw;
+  }
+}
+
+.button-paginate {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  width: 4vw;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1vw;
+    height: 2vh;
+    background-color: $paginate-button-background;
+    border: none;
+    color: $points-type;
+  }
+
+  button:hover {
+    background-color: $paginate-button;
+    color: $paginate-button-background;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+.comments {
+  margin-left: -32.8vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-label {
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+
+  label {
+    font-family: "Helvetica";
+    color: $points-type;
+  }
+}
+
+.input-submit {
+  display: flex;
+  justify-content: space-between;
+  width: 66vw;
+  padding-top: 3vh;
+  padding-bottom: 15vh;
+
+  button {
+    background-color: $input-form-text;
+    color: $nav-a-color;
+    border: none;
+    border-radius: 0.2vw;
+    font-family: "Helvetica";
+    font-size: 0.9vw;
+    width: 8vw;
+    height: 5vh;
+  }
+
+  button:hover {
+    outline: none;
+    border: 1px solid $input-border-focus;
+    cursor: pointer;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  input {
+    width: 55vw;
+    height: 5vh;
+    background-color: $input-form-text;
+    border: none;
+    color: white;
+    padding-left: 0.3vw;
+    border-radius: 0.2vw;
+  }
+
+  input:focus {
+    outline: none;
+    border: 1px solid $input-border-focus;
+  }
+}
+
+.account-img {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 2vw;
+  }
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+.helpful-not {
+  display: flex;
+  justify-content: space-between;
+  width: 7.5vw;
+  margin-top: 2vh;
+  margin-left: 1vw;
+}
+
+.helpful {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $like-dislike-background;
+  width: 3.5vw;
+  height: 3.5vh;
+  color: $points-type;
+  font-family: "Helvetica";
+  font-size: 0.95vw;
+}
+
+.helpful:hover {
+  border: 1px solid $input-border-focus;
+  cursor: pointer;
+}
+
+.not-helpful:hover {
+  border: 1px solid $input-border-focus;
+  cursor: pointer;
+}
+
+.not-helpful {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $like-dislike-background;
+  width: 3.5vw;
+  height: 3.5vh;
+  color: $points-type;
+  font-family: "Helvetica";
+  font-size: 0.95vw;
+}
+
+.count-helpful-not {
+  display: flex;
+  flex-direction: column;
+
+  small {
+    font-size: 0.6vw;
+  }
+}

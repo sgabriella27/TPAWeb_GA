@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div id="container">
+  <div class="text">
+    <h1>Add Image/Video</h1>
+  </div>
+  <div class="content">
+    <form action="" [formGroup]="uploadForm">
+      <div class="label">
+        <label for="">Input File</label>
+      </div>
+      <div class="choose-file">
+        <input type="file" (change)="onChange($event)">
+      </div>
+      <div class="upload-button">
+        <button (click)="uploadFile()">Upload</button>
+      </div>
+    </form>
+  </div>
+</div>

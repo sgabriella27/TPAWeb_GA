@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<main>
+  <div id="container" *ngIf="user">
+    <div class="header">
+      <span>AVATAR</span>
+    </div>
+    <div class="content">
+      <div class="profile">
+        <div class="profile-text">
+          <span>Current Avatar</span>
+        </div>
+        <div class="profile-image">
+          <img src="assets/{{user.profilePic}}" alt="">
+        </div>
+      </div>
+      <div class="update-avatar">
+        <form action="" [formGroup]="avatarForm">
+          <div class="avatar-label">
+            <label for="">Avatar</label>
+          </div>
+          <div class="avatar-upload">
+            <input type="file" (change)="onChange($event)">
+          </div>
+          <div class="avatar-button">
+            <button (click)="upload()">Upload</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

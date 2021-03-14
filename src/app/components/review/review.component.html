@@ -1,0 +1,36 @@
+<div id="container-review">
+  <div class="add-button">
+    <a href="add/review">Add Review</a>
+  </div>
+  <div id="container" *ngFor="let r of review">
+    <a href="/community/review/{{r.id}}">
+      <div id="content-container">
+        <div class="img-content">
+          <img [src]="showFile(r.game.id)" alt="">
+        </div>
+        <div class="bottom-content">
+          <div class="game-content-text">
+            <span>{{r.game.gameTitle}}</span>
+            <small>{{r.description}}</small>
+          </div>
+          <div class="recommended">
+            <span>{{r.recommended ? 'Recommended' : 'Not Recommended'}}</span>
+          </div>
+          <div class="helpful-button">
+            <div class="text">
+              <small>Was this review helpful?</small>
+            </div>
+            <div class="helpful-not">
+              <div (click)="onHelpful(r.id)" class="helpful">Yes</div>
+              <div (click)="onNothelptul(r.id)" class="not-helpful">No</div>
+            </div>
+            <div class="count-helpful-not">
+              <small>{{r.helpful}} people found this review helpful</small>
+              <small>{{r.notHelpful}} people found this review helpful</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

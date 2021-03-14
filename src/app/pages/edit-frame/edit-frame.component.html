@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<main>
+  <div id="container" *ngIf="user">
+    <div class="header">
+      <span>FRAME</span>
+    </div>
+    <div class="content">
+      <div class="profile">
+        <div class="profile-text">
+          <span>Current Frame</span>
+        </div>
+        <div class="profile-img" [ngStyle]="{'background-image': 'url(&quot;/assets/Point%20Shop/' + frameURL + '&quot;)'}">
+          <img src="assets/{{user.profilePic}}" alt="">
+        </div>
+      </div>
+      <div class="owned-frame">
+        <div class="frame">
+          <span>Your Avatar Frame</span>
+        </div>
+        <div class="list-frames">
+          <div class="frames" *ngFor="let f of user.ownedFrame" (click)="saveFrame(f.id)">
+            <img src="assets/Point%20Shop/{{f.itemImg}}" (click)="changeFrame(f.itemImg)" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

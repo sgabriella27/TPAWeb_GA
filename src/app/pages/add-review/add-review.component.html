@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div id="container">
+  <div class="text">
+    <h1>Add Review</h1>
+  </div>
+  <div class="content">
+    <form action="" [formGroup]="reviewForm">
+      <div class="title-label">
+        <label for="">Game Title</label>
+      </div>
+      <div class="input-game">
+        <select name="games" formControlName="pickGame" id="">
+          <option *ngFor="let g of games" value="{{g.id}}">{{g.gameTitle}}</option>
+        </select>
+      </div>
+      <div class="desc-label">
+        <label for="">Description</label>
+      </div>
+      <div class="desc-input">
+        <input type="text" formControlName="description">
+      </div>
+      <div class="recommend">
+        <label for="">Recommended</label>
+        <input type="checkbox" formControlName="recommend">
+      </div>
+      <div class="add-button">
+        <button (click)="addReview()">Add Review</button>
+      </div>
+    </form>
+  </div>
+</div>

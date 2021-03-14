@@ -1,0 +1,16 @@
+<div id="container" *ngFor="let c of discussionGroup">
+  <div class="content-container">
+    <div class="game-img">
+        <div class="game-header">
+          <img [src]="showFile(c[0].gameId)" alt="">
+          <div class="game-title">
+            <h1>{{c[0].gameTitle}}</h1>
+          </div>
+        </div>
+        <div class="card" *ngFor="let e of c" [routerLink]="['/discussion', 'detail', e.discId]">
+          <p>{{e.title}}</p>
+          <small>{{e.description}}</small>
+        </div>
+    </div>
+  </div>
+</div>

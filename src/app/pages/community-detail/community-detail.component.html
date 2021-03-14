@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<div id="container" *ngIf="asset">
+  <div class="content-container">
+    <div class="img-content">
+      <img class="asset" src="assets/{{asset.asset}}" alt="">
+    </div>
+    <div class="lower-content">
+      <div class="count-like-dislike">
+        <span class="like-count">{{asset.like}}</span>
+        <span class="dislike-count">{{asset.dislike}}</span>
+      </div>
+      <div class="account">
+        <div class="account-img">
+          <img src="assets/{{asset.user.profilePic}}" alt="">
+        </div>
+        <div class="account-name">
+          <span>{{asset.user.displayName}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="comments-container" *ngFor="let c of asset.comments">
+    <div class="comments">
+      <div class="comment-account">
+        <div class="comment-img">
+          <img src="assets/{{c.user.profilePic}}" alt="">
+        </div>
+        <div class="comment-name">
+          <span>{{c.user.displayName}}</span>
+        </div>
+      </div>
+      <div class="comment-content">
+        <span>{{c.comment}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="button-paginate">
+    <button (click)="prevPage()"> < </button>
+    <button (click)="nextPage()"> > </button>
+  </div>
+  <form [formGroup]="commentForm">
+    <div class="comment-label">
+      <label for="">Comment</label>
+    </div>
+    <div class="input-submit">
+      <input type="text" formControlName="comment">
+      <button (click)="addComment()">Submit</button>
+    </div>
+  </form>
+</div>

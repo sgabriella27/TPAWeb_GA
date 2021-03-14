@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="friends-container" *ngIf="user">
+    <div class="friend-list" *ngFor="let u of user.friends">
+      <span>{{u.friend.displayName}}</span>
+      <button [routerLink]="['/chat/room', u.friend.id]">Chat!</button>
+    </div>
+  </div>
+</div>

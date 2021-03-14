@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<div id="constructor" [style.background-color]="user.theme" *ngIf="user">
+  <img src="assets/Point%20Shop/{{user.frame.itemImg}}" alt="">
+  {{user.realName}}
+  {{user.displayName}}
+  {{user.summary}}
+  {{user.level}}
+  <img src="assets/Point%20Shop/{{user.badge.itemImg}}" alt="">
+  <img src="assets/{{user.profilePic}}" alt="">
+  <button routerLink="/edit/profile/home">Edit Profile</button>
+</div>

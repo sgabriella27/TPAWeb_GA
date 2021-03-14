@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div id="container" *ngIf="discussion">
+  <div class="content-upper">
+    <div class="game-img">
+      <img [src]="showFile(discussion.game?.id)" alt="">
+    </div>
+    <div class="game-title">
+      <span>{{discussion.game?.gameTitle}}</span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="account">
+      <div class="account-img">
+          <img src="assets/{{discussion.user.profilePic}}" alt="">
+      </div>
+      <div class="account-name">
+        <span>{{discussion.user.displayName}}</span>
+      </div>
+    </div>
+    <div class="title-description">
+      <span>{{discussion.title}}</span>
+      <p>{{discussion.description}}</p>
+    </div>
+  </div>
+  <div class="comment-header">
+    <span>Comments</span>
+  </div>
+  <div class="comments-container" *ngFor="let d of discussion.comments">
+    <div class="comments">
+      <div class="comment-account">
+        <div class="comment-img">
+          <img src="assets/{{d.user.profilePic}}" alt="">
+        </div>
+        <div class="comment-name">
+          <span>{{d.user.displayName}}</span>
+        </div>
+      </div>
+      <div class="comment-content">
+        <span>{{d.comment}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="container-button">
+    <div class="button-paginate">
+      <button (click)="prevPage()"> < </button>
+      <button (click)="nextPage()"> > </button>
+    </div>
+  </div>
+  <form [formGroup]="commentForm">
+    <div class="input-submit">
+      <input type="text" formControlName="comment">
+      <button (click)="addComment()">Post Comment</button>
+    </div>
+  </form>
+</div>

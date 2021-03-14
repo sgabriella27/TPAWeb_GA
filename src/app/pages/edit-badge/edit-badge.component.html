@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<main>
+  <div id="container" *ngIf="user">
+    <div class="header">
+      <span>FRAME</span>
+    </div>
+    <div class="content">
+      <div class="profile">
+        <div class="profile-text">
+          <span>Current Badge</span>
+        </div>
+        <div class="badge">
+          <img src="assets/Point%20Shop/{{user.badge.itemImg}}" alt="">
+        </div>
+      </div>
+      <div class="owned-badge">
+        <div class="badge-txt">
+          <span>Your Badge</span>
+        </div>
+        <div class="list-badge">
+          <div class="badges" *ngFor="let f of user.ownedBadge" (click)="saveBadge(f.id)">
+            <img src="assets/Point%20Shop/{{f.itemImg}}" (click)="changeBadge(f.itemImg)" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

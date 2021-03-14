@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<main>
+  <div id="container">
+    <div class="header">
+      <p>ABOUT</p>
+    </div>
+    <div class="form">
+      <form action="" [formGroup]="updateForm">
+        <div class="display-name">
+          <div class="label">
+            <label for="">Display Name</label>
+          </div>
+          <div class="input">
+            <input type="text" formControlName="displayName">
+          </div>
+        </div>
+        <div class="real-name">
+          <div class="label">
+            <label for="">Real Name</label>
+          </div>
+          <div class="input">
+            <input type="text" formControlName="realName">
+          </div>
+        </div>
+        <div class="custom-url">
+          <div class="label">
+            <label for="">Custom URL</label>
+          </div>
+          <div class="input">
+            <input type="text" formControlName="customURL">
+          </div>
+        </div>
+        <div class="country">
+          <div class="label">
+            <label>Country</label>
+          </div>
+          <div class="input">
+            <select formControlName="country">
+              <option value="Indonesia">Indonesia</option>
+              <option value="United States of America">
+                United States of America
+              </option>
+              <option value="Singapore">Singapore</option>
+              <option value="Malaysia">Malaysia</option>
+            </select>
+          </div>
+        </div>
+        <div class="summary">
+          <div class="label">
+            <label for="">Summary</label>
+          </div>
+          <div class="input">
+            <textarea name="" id="" cols="93" rows="10" formControlName="summary"></textarea>
+          </div>
+        </div>
+        <div class="button-submit">
+          <p (click)="onSave()">Save</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+

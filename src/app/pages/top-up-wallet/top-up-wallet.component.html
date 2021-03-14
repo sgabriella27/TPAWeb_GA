@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div id="container">
+  <div class="text">
+    <h1>Redeem Wallet</h1>
+  </div>
+  <div class="content">
+    <form action="" [formGroup]="codeForm">
+      <div class="label">
+        <label for="">Steam Wallet Code</label>
+      </div>
+      <div class="input">
+        <input type="text" formControlName="codeRedeem">
+      </div>
+      <div class="button">
+        <button (click)="redeem()">Redeem</button>
+      </div>
+    </form>
+    <div class="bottom-content">
+      <div class="text">
+        <span>Your Balance Now :</span>
+      </div>
+      <div class="balance" *ngIf="user">
+        <span>Rp. {{user.wallet}}</span>
+      </div>
+    </div>
+  </div>
+</div>

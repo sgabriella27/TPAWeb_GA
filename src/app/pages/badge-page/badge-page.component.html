@@ -1,0 +1,9 @@
+<div class="list-badge">
+  <div class="badges" *ngFor="let f of user.ownedBadge">
+    <img src="assets/Point%20Shop/{{f.itemImg}}" alt="">
+    <div class="cards" *ngFor="let card of getCardByID(f.id)">
+      <img *ngIf="card.status == 'owned'" src="assets/Point%20Shop/{{card.cardImg}}" alt="">
+      <img *ngIf="card.status == 'not owned'" style="opacity: 0.2;" src="assets/Point%20Shop/{{card.cardImg}}" alt="">
+    </div>
+  </div>
+</div>

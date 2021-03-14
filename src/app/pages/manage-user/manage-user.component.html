@@ -1,0 +1,20 @@
+<div id="container">
+  <div class="content" *ngFor="let u of user">
+    {{u.accountName}}
+  </div>
+  <div class="button-paginate">
+    <button (click)="prevPage()"> < </button>
+    <button (click)="nextPage()"> > </button>
+  </div>
+  <div class="report-list" *ngFor="let r of reportReq">
+    <span>suspected : {{r.suspected.displayName}}</span>
+    <span>reporter : {{r.reporter.displayName}}</span>
+    <span>{{r.reason}}</span>
+  </div>
+  <div class="unsuspendList" *ngFor="let un of unsuspendList">
+    <span>reason : {{un.reason}}</span>
+    <span>user : {{un.user.accountName}}</span>
+    <button (click)="declineUnsuspend(un)">Decline</button>
+    <button (click)="acceptUnsuspend(un)">Unsuspend</button>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<app-navbar></app-navbar>
+<div id="container" *ngIf="user">
+  <div class="backgrounds" *ngFor="let f of user.ownedBackground"
+       (click)="saveBackground(f.id)">
+    <img src="assets/Point%20Shop/{{f.itemImg}}" alt="">
+  </div>
+</div>

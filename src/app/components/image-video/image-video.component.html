@@ -1,0 +1,22 @@
+<div class="add-button">
+  <a href="add/form">Add Community Video/Image</a>
+</div>
+<div id="container" *ngFor="let a of asset">
+  <a href="/community/{{a.id}}">
+    <div id="content-container">
+      <div class="img-content">
+        <img class="asset" src="assets/{{a.asset}}" alt="">
+      </div>
+      <div class="like-dislike-content">
+        <div class="like-dislike">
+          <div (click)="onLike(a.id)" class="like">like</div>
+          <div (click)="onDislike(a.id)" class="dislike">dislike</div>
+        </div>
+        <div class="count-like-dislike">
+            <span class="like-count">{{a.like}}</span>
+            <span class="dislike-count">{{a.dislike}}</span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

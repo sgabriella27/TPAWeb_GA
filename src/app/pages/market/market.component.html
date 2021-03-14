@@ -1,0 +1,12 @@
+<div id="container" *ngFor="let gi of gameItem">
+  <a href="market/detail/{{gi.id}}">
+    <div class="content">
+      <img src="{{gi.gameItemImg}}" alt="">
+      <span>{{gi.gameItemName}}</span>
+    </div>
+  </a>
+</div>
+<div class="button-paginate">
+  <button (click)="prevPage()"> < </button>
+  <button (click)="nextPage()"> > </button>
+</div>

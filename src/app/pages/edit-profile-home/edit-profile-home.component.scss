@@ -1,0 +1,52 @@
+@import "src/style/color";
+
+#container {
+  background-image : linear-gradient($main-background, $main-background2);
+  height: 87vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.admin-option-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 12vh;
+  width: 40vw;
+  user-select: none;
+
+  h1 {
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+
+  h3 {
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+}
+
+.admin-option-content {
+  width: 33vw;
+  height: 5vh;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $manage-button;
+  transition: transform 1s ease;
+  user-select: none;
+
+  a {
+    text-decoration: none;
+    font-size: 1vw;
+    font-family: "Helvetica";
+    color: $nav-a-color;
+  }
+}
+
+.admin-option-content:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<app-points-shop-navbar></app-points-shop-navbar>
+<div id="container">
+  <div id="content-container">
+    <div id="content" *ngFor="let p of item" (click)="buyItem(p.id)">
+      <div class="img-content">
+        <img src="assets/Point%20Shop/{{p.itemImg}}" alt="">
+      </div>
+      <div class="text-content">
+        <span class="item-type">{{p.itemType}}</span>
+        <span class="item-points">{{p.itemPoints}}</span>
+      </div>
+    </div>
+  </div>
+</div>

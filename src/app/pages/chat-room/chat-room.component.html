@@ -1,0 +1,6 @@
+<div class="container" *ngIf="user">
+  <p>{{this.chat}}</p>
+  <p>{{this.friendChat}}</p>
+  <textarea name="" id="" cols="30" rows="10" [(ngModel)]="insertChat"></textarea>
+  <button class="submit" (click)="insertPrivateChat()">Send</button>
+</div>

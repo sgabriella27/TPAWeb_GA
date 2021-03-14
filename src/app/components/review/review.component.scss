@@ -1,0 +1,164 @@
+@import "src/style/color";
+
+#container-review {
+  padding-bottom: 15vh;
+}
+
+#container {
+  a {
+    text-decoration: none;
+  }
+}
+
+#content-container {
+  display: flex;
+  background-color: $tab-control-background;
+  width: 55vw;
+  margin-left: 20vw;
+  margin-top: 0.5vh;
+  user-select: none;
+  transition: 0.3s;
+}
+
+#content-container:hover {
+  transform: scale(1.017);
+  background-color: $card-hover;
+}
+
+.img-content {
+  display: flex;
+  align-items: center;
+  padding-top: 1vh;
+
+  img {
+    width: 10vw;
+    padding: 1vw 1vw;
+  }
+}
+
+.bottom-content {
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+}
+
+.game-content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  span {
+    color: $points-type;
+    font-family: "Helvetica";
+    font-size: 1.5vw;
+  }
+
+  small {
+    margin-top: 0.3vh;
+    color: $nav-a-color;
+    font-family: "Helvetica";
+  }
+}
+
+.recommended {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    color: $side-bar-text;
+    font-family: "Helvetica";
+    font-size: 1.3vw;
+  }
+}
+
+.helpful-button {
+  display: flex;
+  flex-direction: column;
+  width: 7.5vw;
+  margin-top: 2vh;
+  margin-left: 1vw;
+}
+
+.helpful {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $like-dislike-background;
+  width: 3vw;
+  height: 3vh;
+  color: $points-type;
+  font-family: "Helvetica";
+  font-size: 0.8vw;
+}
+
+.not-helpful {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $like-dislike-background;
+  width: 3vw;
+  height: 3vh;
+  color: $points-type;
+  font-family: "Helvetica";
+  font-size: 0.8vw;
+}
+
+.helpful:hover {
+  border: 1px solid $input-border-focus;
+  cursor: pointer;
+}
+
+.not-helpful:hover {
+  border: 1px solid $input-border-focus;
+  cursor: pointer;
+}
+
+.helpful-not {
+  display: flex;
+  justify-content: space-between;
+}
+
+.count-helpful-not {
+  display: flex;
+  flex-direction: column;
+  color: $points-type;
+  font-family: "Helvetica";
+  font-size: 0.6vw;
+  padding-top: 0.8vh;
+}
+
+.text {
+  width: 9vw;
+  padding-bottom: 0.8vh;
+
+  small {
+    font-family: "Helvetica";
+    color: $points-type;
+    font-size: 0.8vw;
+  }
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2vw;
+  width: 15vw;
+  height: 6vh;
+  background-color: $card-background;
+  margin-left: 20vw;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+
+  a {
+    text-decoration: none;
+    color: $points-type;
+    font-family: "Helvetica";
+    font-size: 1vw;
+  }
+}
+
+.add-button:hover {
+  border: 1px solid $side-bar-text;
+}

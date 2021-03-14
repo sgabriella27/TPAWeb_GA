@@ -1,0 +1,75 @@
+@import "src/style/color";
+
+#container {
+  background-image : linear-gradient($main-background, $main-background2);
+  user-select: none;
+}
+
+#content-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3vw;
+  margin-left: 5vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+#content {
+  width: 10vw;
+  height: 28vh;
+  transition: transform 1s ease;
+}
+
+#content:hover {
+  box-shadow: 3px 3px 3px 3px black;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.img-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image : linear-gradient($main-background, $main-background2);
+  width: 10vw;
+  height: 20vh;
+  border-top-left-radius: 0.25vw;
+  border-top-right-radius: 0.25vw;
+  border-top: 1px solid $input-border-focus;
+  border-left: 1px solid $input-border-focus;
+  border-right: 1px solid $input-border-focus;
+
+  img {
+    width: 8vw;
+    height: 8vw;
+  }
+}
+
+.text-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: $main-background2;
+  width: 10vw;
+  height: 8vh;
+  border-bottom-left-radius: 0.25vw;
+  border-bottom-right-radius: 0.25vw;
+  border-bottom: 1px solid $input-border-focus;
+  border-left: 1px solid $input-border-focus;
+  border-right: 1px solid $input-border-focus;
+
+  .item-type {
+    font-family: "Helvetica";
+    color: $points-type;
+    font-size: 0.7vw;
+    margin-left: 1vw;
+    margin-top: 1vh;
+  }
+
+  .item-points {
+    font-family: "Helvetica";
+    color: $points-type;
+    font-size: 1vw;
+    margin-right: 1vw;
+    margin-top: 3vh;
+  }
+}

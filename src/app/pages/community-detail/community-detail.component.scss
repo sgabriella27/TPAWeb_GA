@@ -1,0 +1,190 @@
+@import "src/style/color";
+
+#container {
+  background-color: $main-background2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3vh;
+  user-select: none;
+}
+
+.content-container {
+  background-color: $tab-control-background;
+  width: 55vw;
+  height: 63vh;
+}
+
+.img-content {
+  display: flex;
+  justify-content: center;
+  padding-top: 1vh;
+
+  img {
+    width: 53vw;
+    height: 54vh;
+  }
+}
+
+.lower-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 52.95vw;
+  margin-left: 1vw;
+  padding-top: 1vh;
+}
+
+.count-like-dislike {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 3.5vw;
+  margin-right: 1vw;
+}
+
+.like-count {
+  font-family: "Helvetica";
+  font-size: 1vw;
+  color: $like-count;
+}
+
+.dislike-count {
+  font-family: "Helvetica";
+  font-size: 1vw;
+  color: red;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.account-name {
+  padding-left: 1vw;
+
+  span {
+    color: $side-bar-hover;
+    font-family: "Helvetica";
+  }
+}
+
+.account-img {
+  img {
+    width: 3vw;
+  }
+}
+
+.comment-account {
+  display: flex;
+  align-items: center;
+  padding-top: 2vh;
+}
+
+.comment-img {
+  img {
+    width: 2vw;
+  }
+}
+
+.comment-name {
+  padding-left: 1vw;
+
+  span {
+    font-family: "Helvetica";
+    color: $side-bar-hover;
+  }
+}
+
+.comment-content {
+  span {
+    font-family: "Helvetica";
+    color: $points-type;
+    font-size: 0.8vw;
+  }
+}
+
+.button-paginate {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  width: 4vw;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1vw;
+    height: 2vh;
+    background-color: $paginate-button-background;
+    border: none;
+    color: $points-type;
+  }
+
+  button:hover {
+    background-color: $paginate-button;
+    color: $paginate-button-background;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+.comments {
+    margin-left: -27.4vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-label {
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+
+  label {
+    font-family: "Helvetica";
+    color: $points-type;
+  }
+}
+
+.input-submit {
+  display: flex;
+  justify-content: space-between;
+  width: 55vw;
+  padding-bottom: 10vh;
+
+  button {
+    background-color: $input-form-text;
+    color: $nav-a-color;
+    border: none;
+    border-radius: 0.2vw;
+    font-family: "Helvetica";
+    font-size: 0.8vw;
+    width: 4vw;
+  }
+
+  button:hover {
+    outline: none;
+    border: 1px solid $input-border-focus;
+    cursor: pointer;
+  }
+
+  input {
+    height: 3.4vh;
+    width: 50vw;
+    background-color: $input-form-text;
+    border: none;
+    color: white;
+    padding-left: 0.3vw;
+    border-radius: 0.2vw;
+  }
+
+  input:focus {
+    outline: none;
+    border: 1px solid $input-border-focus;
+  }
+}

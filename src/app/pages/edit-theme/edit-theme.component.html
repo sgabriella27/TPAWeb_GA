@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<main>
+  <div id="container">
+    <div class="header">
+      <span>THEME</span>
+    </div>
+    <div class="content">
+      <div class="theme">
+        <div class="theme-text">
+          <span>Current Theme</span>
+        </div>
+        <div class="current-theme">
+          <span>CURRENT THEME</span>
+        </div>
+      </div>
+      <div class="choose-text">
+        <span>Choose Theme</span>
+      </div>
+      <div class="choose-color">
+        <div class="default" (click)="change('#222431')">
+          <span>DEFAULT</span>
+        </div>
+        <div class="summer" (click)="change('#B57213')">
+          <span>SUMMER</span>
+        </div>
+        <div class="midnight" (click)="change('#1F1D69')">
+          <span>MIDNIGHT</span>
+        </div>
+        <div class="steel" (click)="change('#3D4A59')">
+          <span>STEEL</span>
+        </div>
+        <div class="cosmic" (click)="change('#772478')">
+          <span>COSMIC</span>
+        </div>
+        <div class="darkmode" (click)="change('#111111')">
+          <span>DARKMODE</span>
+        </div>
+        <div class="button-save">
+          <button (click)="onSave()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

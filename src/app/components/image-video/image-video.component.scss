@@ -1,0 +1,122 @@
+@import "src/style/color";
+
+#container {
+  a {
+    text-decoration: none;
+  }
+}
+
+#content-container {
+  background-color: $tab-control-background;
+  width: 55vw;
+  height: 65vh;
+  margin-left: 20vw;
+  margin-top: 0.5vh;
+}
+
+#content-container:hover {
+  border: 1px solid $input-border-focus;
+}
+
+.img-content {
+  display: flex;
+  justify-content: center;
+  padding-top: 1vh;
+
+  img {
+    width: 53vw;
+    height: 52vh;
+  }
+}
+
+.like-dislike-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-dislike {
+  display: flex;
+  justify-content: space-between;
+  width: 7.5vw;
+  margin-top: 2vh;
+  margin-left: 1vw;
+}
+
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $like-dislike-background;
+  width: 3.5vw;
+  height: 3.5vh;
+  color: $points-type;
+  font-family: "Helvetica";
+  font-size: 0.95vw;
+}
+
+.dislike {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $like-dislike-background;
+  width: 3.5vw;
+  height: 3.5vh;
+  color: $points-type;
+  font-family: "Helvetica";
+  font-size: 0.95vw;
+}
+
+.like:hover {
+  border: 1px solid $input-border-focus;
+  cursor: pointer;
+}
+
+.dislike:hover {
+  border: 1px solid $input-border-focus;
+  cursor: pointer;
+}
+
+.count-like-dislike {
+  display: flex;
+  justify-content: space-between;
+  width: 3.5vw;
+  margin-right: 1vw;
+  margin-top: 2vh;
+}
+
+.like-count {
+  font-family: "Helvetica";
+  font-size: 1vw;
+  color: $like-count;
+}
+
+.dislike-count {
+  font-family: "Helvetica";
+  font-size: 1vw;
+  color: red;
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2vw;
+  width: 15vw;
+  height: 6vh;
+  background-color: $card-background;
+  margin-left: 20vw;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+
+  a {
+    text-decoration: none;
+    color: $points-type;
+    font-family: "Helvetica";
+    font-size: 1vw;
+  }
+}
+
+.add-button:hover {
+  border: 1px solid $side-bar-text;
+}
