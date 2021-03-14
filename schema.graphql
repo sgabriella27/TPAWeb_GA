@@ -49,6 +49,7 @@ type Game {
   gameTag: String!
   gameTitle: String!
   id: ID!
+  mostHouredPlayed: Int!
   promo: Promo
 }
 
@@ -65,6 +66,12 @@ type GameItem {
 type GameMedia {
   contentType: String!
   id: ID!
+}
+
+type Inventory {
+  gameItemID: ID!
+  id: ID!
+  userID: ID!
 }
 
 type MarketGameItem {
@@ -145,6 +152,7 @@ type Promo {
 
 type Query {
   gameByID(id: ID!): Game!
+  getAllGame: [Game]!
   getAllUser(page: Int!): [User]!
   getCommunityAsset: [CommunityAsset]!
   getCommunityAssetByID(id: ID!): CommunityAsset!

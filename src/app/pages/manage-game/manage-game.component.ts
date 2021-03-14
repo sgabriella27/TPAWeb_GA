@@ -54,22 +54,22 @@ export class ManageGameComponent implements OnInit {
     }
     this.apollo.mutate({
       mutation: gql`mutation createGame($gameTitle: String!, $gameDescription: String!, $gamePrice: Int!, $gamePublisher: String!, $gameDeveloper: String!,
-      $gameTag: String!, $gameAdult: Boolean!, $gameBanner: Upload!, $gameSlideshow: [Upload!]!, $gameSystemRequirement: String!) {
-      createGame(input: {
-        gameTitle: $gameTitle,
-        gameDescription: $gameDescription,
-        gamePrice: $gamePrice,
-        gamePublisher: $gamePublisher,
-        gameDeveloper: $gameDeveloper,
-        gameTag: $gameTag,
-        gameAdult: $gameAdult,
-        gameBanner: $gameBanner,
-        gameSlideshow: $gameSlideshow,
-        gameSystemRequirement: $gameSystemRequirement
-      }) {
-        id
-      }
-    }`, variables: {
+        $gameTag: String!, $gameAdult: Boolean!, $gameBanner: Upload!, $gameSlideshow: [Upload!]!, $gameSystemRequirement: String!) {
+        createGame(input: {
+          gameTitle: $gameTitle,
+          gameDescription: $gameDescription,
+          gamePrice: $gamePrice,
+          gamePublisher: $gamePublisher,
+          gameDeveloper: $gameDeveloper,
+          gameTag: $gameTag,
+          gameAdult: $gameAdult,
+          gameBanner: $gameBanner,
+          gameSlideshow: $gameSlideshow,
+          gameSystemRequirement: $gameSystemRequirement
+        }) {
+          id
+        }
+      }`, variables: {
         gameTitle: this.createGameForm.value.gameTitle,
         gameDescription: this.createGameForm.value.gameDescription,
         gamePrice: this.createGameForm.value.gamePrice,
@@ -83,6 +83,8 @@ export class ManageGameComponent implements OnInit {
       }
     }).subscribe(resp => {
       console.log(resp);
+      alert('Add Game Success!');
+      window.location.reload();
     });
   }
 }

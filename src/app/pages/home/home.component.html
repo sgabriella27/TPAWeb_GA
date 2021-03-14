@@ -3,8 +3,20 @@
   <div id="side-bar">
     <app-sidebar></app-sidebar>
   </div>
-  <div id="search-bar">
-    <app-searchbar></app-searchbar>
+  <div class="content">
+    <div id="search-bar">
+      <app-searchbar></app-searchbar>
+    </div>
+    <div class="game-container">
+      <div class="games" *ngFor="let g of game" >
+        <div class="game-display" >
+          <img [src]="showFile(g.id)" alt="">
+        </div>
+        <div class="game-title">
+          <span>{{g.gameTitle}}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>

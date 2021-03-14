@@ -54,6 +54,8 @@ import { EditProfileHomeComponent } from './pages/edit-profile-home/edit-profile
 import {ChartsModule} from 'ng2-charts';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { GameDetailComponent } from './pages/game-detail/game-detail.component';
+import { ChatHomeComponent } from './pages/chat-home/chat-home.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +104,8 @@ import { environment } from '../environments/environment';
     AddImgvidComponent,
     AddReviewComponent,
     EditProfileHomeComponent,
+    GameDetailComponent,
+    ChatHomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,6 @@
 
 #container {
   background-image : linear-gradient($main-background, $main-background2);
-  height: 100vh;
   display: flex;
 }
 
@@ -10,4 +9,47 @@
   display: flex;
   margin-top: 5vh;
   margin-left: 10vw;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3vw;
+  margin-left: 10vw;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+.games {
+  background-color: $login-admin-container;
+  height: 40vh;
+  width: 28.4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $input-border-focus;
+  border-radius: 0.3vw;
+}
+
+
+.game-display {
+
+  img {
+    width: 20vw;
+    height: 20vh;
+  }
+}
+
+.game-title {
+  span {
+    color: $nav-a-color;
+    font-family: "Helvetica";
+    font-size: 1.5vw;
+  }
 }
