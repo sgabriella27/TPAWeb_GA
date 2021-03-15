@@ -42,22 +42,32 @@ import {EditThemeComponent} from './pages/edit-theme/edit-theme.component';
 import {EditBadgeComponent} from './pages/edit-badge/edit-badge.component';
 import {EditMiniProfileComponent} from './pages/edit-mini-profile/edit-mini-profile.component';
 import {RecaptchaModule} from 'ng-recaptcha';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { EditFrameComponent } from './pages/edit-frame/edit-frame.component';
-import { TopUpWalletComponent } from './pages/top-up-wallet/top-up-wallet.component';
-import { MarketComponent } from './pages/market/market.component';
-import { MarketDetailComponent } from './pages/market-detail/market-detail.component';
-import { ManageUserComponent } from './pages/manage-user/manage-user.component';
-import { AddImgvidComponent } from './pages/add-imgvid/add-imgvid.component';
-import { AddReviewComponent } from './pages/add-review/add-review.component';
-import { EditProfileHomeComponent } from './pages/edit-profile-home/edit-profile-home.component';
+import {ProfileComponent} from './pages/profile/profile.component';
+import {EditFrameComponent} from './pages/edit-frame/edit-frame.component';
+import {TopUpWalletComponent} from './pages/top-up-wallet/top-up-wallet.component';
+import {MarketComponent} from './pages/market/market.component';
+import {MarketDetailComponent} from './pages/market-detail/market-detail.component';
+import {ManageUserComponent} from './pages/manage-user/manage-user.component';
+import {AddImgvidComponent} from './pages/add-imgvid/add-imgvid.component';
+import {AddReviewComponent} from './pages/add-review/add-review.component';
+import {EditProfileHomeComponent} from './pages/edit-profile-home/edit-profile-home.component';
 import {ChartsModule} from 'ng2-charts';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { GameDetailComponent } from './pages/game-detail/game-detail.component';
-import { ChatHomeComponent } from './pages/chat-home/chat-home.component';
-import { ChatRoomComponent } from './pages/chat-room/chat-room.component';
-import { BadgePageComponent } from './pages/badge-page/badge-page.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
+import {GameDetailComponent} from './pages/game-detail/game-detail.component';
+import {ChatHomeComponent} from './pages/chat-home/chat-home.component';
+import {ChatRoomComponent} from './pages/chat-room/chat-room.component';
+import {BadgePageComponent} from './pages/badge-page/badge-page.component';
+import {BroadcastComponent} from './pages/broadcast/broadcast.component';
+import {FriendPageComponent} from './pages/friend-page/friend-page.component';
+import {InventoryComponent} from './pages/inventory/inventory.component';
+import {InventoryDetailComponent} from './pages/inventory-detail/inventory-detail.component';
+import {WishlistPageComponent} from './pages/wishlist-page/wishlist-page.component';
+import {DiscoveryComponent} from './pages/discovery/discovery.component';
+import {StreamComponent} from './pages/stream/stream.component';
+import {CartComponent} from './pages/cart/cart.component';
+import {CheckoutComponent} from './pages/checkout/checkout.component';
+import {NgxMapboxGLModule} from 'ngx-mapbox-gl';
 
 @NgModule({
   declarations: [
@@ -110,6 +120,15 @@ import { BadgePageComponent } from './pages/badge-page/badge-page.component';
     ChatHomeComponent,
     ChatRoomComponent,
     BadgePageComponent,
+    BroadcastComponent,
+    FriendPageComponent,
+    InventoryComponent,
+    InventoryDetailComponent,
+    WishlistPageComponent,
+    DiscoveryComponent,
+    StreamComponent,
+    CartComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,7 +139,11 @@ import { BadgePageComponent } from './pages/badge-page/badge-page.component';
     RecaptchaModule,
     ChartsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-    FormsModule
+    FormsModule,
+    NgxMapboxGLModule.withConfig({
+      accessToken: 'pk.eyJ1Ijoic2dhYnJpZWxsYSIsImEiOiJja21ha2x5Z3gwM2ZuMnhxaHR1enNxMjRhIn0.ZWVwOTjpNw3d9DC7T1bFkA', // Optional, can also be set per map (accessToken input of mgl-map)
+      geocoderAccessToken: 'pk.eyJ1Ijoic2dhYnJpZWxsYSIsImEiOiJja21ha2x5Z3gwM2ZuMnhxaHR1enNxMjRhIn0.ZWVwOTjpNw3d9DC7T1bFkA' // Optional, specify if different from the map access token, can also be set per mgl-geocoder (accessToken input of mgl-geocoder)
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

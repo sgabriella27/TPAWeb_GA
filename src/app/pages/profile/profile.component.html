@@ -5,7 +5,32 @@
   {{user.displayName}}
   {{user.summary}}
   {{user.level}}
+  <div class="friends" *ngFor="let f of user.friends">
+    <span>friend : {{f.friend.displayName}}</span>
+  </div>
   <img src="assets/Point%20Shop/{{user.badge.itemImg}}" alt="">
   <img src="assets/{{user.profilePic}}" alt="">
   <button routerLink="/edit/profile/home">Edit Profile</button>
+  <div class="recent-activities" *ngFor="let a of allActivities">
+    <span>{{a.activity}}</span>
+  </div>
+  <div class="button-paginate">
+    <button (click)="prevPage()"> <</button>
+    <button (click)="nextPage()"> ></button>
+  </div>
+  <div class="add-friend">
+    <button (click)="addFriend()">Add Friend</button>
+  </div>
+  <div class="comments" *ngFor="let c of user.profileComment">
+    {{c.comment}}
+  </div>
+  <div class="comment">
+    <label for="">Comment</label>
+    <input type="text" #comment>
+    <button (click)="addComment(comment.value)">Comment</button>
+  </div>
+  <div class="button-paginate">
+    <button (click)="prevPageComment()"> < </button>
+    <button (click)="nextPageComment()"> > </button>
+  </div>
 </div>

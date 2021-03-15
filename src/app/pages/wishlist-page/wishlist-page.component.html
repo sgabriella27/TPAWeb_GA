@@ -1,0 +1,5 @@
+<div id="container" *ngFor="let w of wishlist">
+  {{w.game.gameTitle}}
+  <img [src]="showFile(w.game.id)" alt="">
+  <button (click)="onDelete(w.game.id)">Delete</button>
+</div>

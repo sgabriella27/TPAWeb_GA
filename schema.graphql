@@ -6,6 +6,12 @@ schema {
   subscription: Subscription
 }
 
+type Activities {
+  activity: String!
+  id: ID!
+  userID: ID!
+}
+
 type Card {
   badge: PointItem
   badgeID: Int
@@ -13,6 +19,14 @@ type Card {
   id: ID!
   ownedBadge: [PointItem]!
   status: String!
+}
+
+type Cart {
+  game: Game!
+  gameID: ID!
+  id: ID!
+  user: User!
+  userID: ID!
 }
 
 type CommunityAsset {
@@ -28,6 +42,13 @@ type CommunityAssetComment {
   comment: String!
   id: ID!
   user: User!
+}
+
+type Country {
+  country: String!
+  id: ID!
+  latitude: Float!
+  longitude: Float!
 }
 
 type Discussion {
@@ -48,6 +69,7 @@ type DiscussionComment {
 type FriendRequest {
   friend: User!
   friendID: ID!
+  status: String!
   user: User!
   userID: ID!
 }
@@ -63,6 +85,7 @@ type Game {
   createdAt: Time!
   gameAdult: Boolean!
   gameBanner: Int!
+  gameCountry: [MapData!]!
   gameDescription: String!
   gameDeveloper: String!
   gamePrice: Int!
@@ -74,6 +97,7 @@ type Game {
   id: ID!
   mostHouredPlayed: Int!
   promo: Promo
+  review(page: Int!): [Review]!
 }
 
 type GameItem {
@@ -91,10 +115,24 @@ type GameMedia {
   id: ID!
 }
 
+type GameTransaction {
+  game: Game!
+  gameID: ID!
+  id: ID!
+  user: User!
+  userID: ID!
+}
+
 type Inventory {
+  gameItem: GameItem!
   gameItemID: ID!
   id: ID!
   userID: ID!
+}
+
+type MapData {
+  count: Int!
+  country: Country!
 }
 
 type MarketGameItem {
@@ -122,37 +160,49 @@ type MarketTransaction {
 }
 
 type Mutation {
+  acceptFriendRequest(friendID: ID!, userID: ID!): FriendRequest!
   addReported(input: ID!): User!
   addWalletAmount(amount: Int!, userID: ID!): User!
+  checkoutCart(useWallet: Boolean!, userID: ID!): Boolean!
   createGame(input: newGame!): Game!
   createReportRequest(input: InputRequestReport!): ReportRequest!
   createSuspensionList(input: InputSuspensionList!): String!
   createUnsuspensionRequest(input: InputUnsuspensionRequest!): UnsuspensionRequest!
   deleteGame(id: ID!): Game!
   deletePromo(id: ID!): Promo!
+  deleteWishlist(gameID: ID!, userID: ID!): Wishlist!
   dislikeCommunityAsset(id: ID!): CommunityAsset!
+  giftTo(friendID: ID!, userID: ID!): Boolean!
   helpfulReview(id: ID!): Review!
+  ignoreFriendRequest(friendID: ID!, userID: ID!): FriendRequest!
   insertBuyItem(buyerID: ID!, gameItemID: ID!, userID: ID!): String!
+  insertCart(gameID: ID!, userID: ID!): Cart!
   insertCommunityAsset(input: newCommunityAsset!): CommunityAsset!
   insertCommunityComment(input: newCommunityComment): CommunityAssetComment!
   insertCommunityVidImg(imgVid: String!, userID: ID!): CommunityAsset!
   insertDiscussion(input: newDiscussion): Discussion!
   insertDiscussionComment(input: newDiscussionComment): DiscussionComment!
+  insertFriendRequest(friendID: ID!, userID: ID!): FriendRequest!
+  insertFriendRequestByCode(code: String!, userID: ID!): FriendRequest!
   insertMarketItem(input: newMarketItem!): MarketGameItem!
   insertNewReview(desc: String!, gameID: ID!, recommend: Boolean!, userID: ID!): Review!
   insertPointTransaction(itemID: ID!, userID: ID!): Boolean!
   insertPointsItem(input: newPointItem!): PointItem!
+  insertProfileComment(comment: String!, profileID: ID!, userID: ID!): ProfileComment!
   insertPromo(input: newPromo!): Promo!
   insertRedeemCode(amountMoney: Int!, code: String!): RedeemCode!
   insertReview(input: newReview): Review!
   insertReviewComment(input: newReviewComment): ReviewComment!
   insertSellItem(gameItemID: ID!, sellerID: ID!, userID: ID!): String!
   insertUserChat(message: String!, userID: ID!): String!
+  insertWishlist(gameID: ID!, userID: ID!): Wishlist!
   likeCommunityAsset(id: ID!): CommunityAsset!
   notHelpfulReview(id: ID!): Review!
   redeemWalletCode(code: String!, userID: ID!): User!
   reduceWalletAmount(amount: Int!, userID: ID!): User!
   register(input: Register!): User!
+  rejectFriendRequest(friendID: ID!, userID: ID!): FriendRequest!
+  removeCart(gameID: ID!, userID: ID!): Boolean!
   sendOTP(input: Int!): Int
   updateAvatar(id: ID!, profilePic: String!): User!
   updateBackground(backgroundID: ID!, id: ID!): User!
@@ -172,6 +222,15 @@ type PointItem {
   itemType: String!
 }
 
+type ProfileComment {
+  comment: String!
+  id: ID!
+  profile: User!
+  profileID: ID!
+  user: User!
+  userID: ID!
+}
+
 type Promo {
   discountPromo: Int!
   endDate: Time!
@@ -181,6 +240,7 @@ type Promo {
 type Query {
   deleteReport(id: ID!): String!
   gameByID(id: ID!): Game!
+  getAllActivities(page: Int!): [Activities]!
   getAllGame: [Game]!
   getAllUser(page: Int!): [User]!
   getCard: [Card]!
@@ -188,13 +248,16 @@ type Query {
   getCommunityAsset: [CommunityAsset]!
   getCommunityAssetByID(id: ID!): CommunityAsset!
   getCommunityReview: [Review]!
+  getDiscovery: [Game]!
   getDiscussion: [Discussion]!
   getDiscussionByID(id: ID!): Discussion!
   getGame: [Game]!
   getGameItem(page: Int!): [GameItem]!
   getGameItemByID(id: ID!): GameItem!
+  getGamePaginate(page: Int!): [Game]!
   getMarketGameItemByID(id: ID!): [MarketGameItem]!
   getMarketListing: [MarketListing]!
+  getNewRelease: [Game]!
   getPointsItem: [PointItem]!
   getPromo(gameID: ID!): Promo!
   getRedeemCode(code: String!): RedeemCode!
@@ -203,6 +266,8 @@ type Query {
   getSuspensionList: [SuspensionList!]!
   getUnsuspensionRequest: [UnsuspensionRequest!]!
   getUser(jwtToken: String!): User!
+  getUserByCustomURL(customURL: String!): User!
+  getWishlistByUser(userID: ID!): [Wishlist]!
   hello: String!
   login(accountName: String!, password: String!): String!
 }
@@ -264,14 +329,18 @@ type User {
   backgroundID: Int
   badge: PointItem
   badgeID: Int
+  cart: [Cart!]!
   country: String!
+  countryID: ID!
   customURL: String!
   displayName: String!
   frame: PointItem
   frameID: Int
+  friendCode: String!
   friendRequest: [FriendRequest]!
   friends: [Friends]!
   id: ID!
+  items(page: Int!): [Inventory!]!
   level: Int!
   miniBackground: PointItem
   miniBackgroundID: Int!
@@ -280,13 +349,24 @@ type User {
   ownedFrame: [PointItem]!
   ownedMiniBackground: [PointItem]!
   points: Int!
+  profileComment(page: Int!): [ProfileComment]!
   profilePic: String!
   realName: String!
   reported: Int!
+  status: String!
   summary: String!
   suspended: Boolean
   theme: String!
   wallet: Int!
+  wishlist: Wishlist!
+}
+
+type Wishlist {
+  game: Game!
+  gameID: ID!
+  id: ID!
+  user: User!
+  userID: ID!
 }
 
 input InputRequestReport {
@@ -408,6 +488,6 @@ input updateUser {
 }
 
 
-scalar Time
-
 scalar Upload
+
+scalar Time

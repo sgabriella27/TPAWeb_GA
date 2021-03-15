@@ -1,1 +1,59 @@
-<p>game-detail works!</p>
+<div id="container">
+  <div class="button-cart">
+    <button (click)="addCart()">Add to Cart</button>
+  </div>
+  <div class="wishlist">
+    <button (click)="addWishlist()">Wishlist</button>
+  </div>
+  <div class="games" *ngIf="games">
+  {{games.gameTag}} > {{games.gameTitle}}
+    <div class="game-display">
+      <img [src]="showFile(games.id)" alt="">
+    </div>
+    <div class="game-title">
+      <span>{{games.gameTitle}}</span>
+    </div>
+    <div class="game-tag">
+      <span>{{games.gameTag}}</span>
+    </div>
+    <div class="game-tag">
+      <span>{{games.gameDescription}}</span>
+    </div>
+    <div class="game-tag">
+      <span>{{games.gameDeveloper}}</span>
+    </div>
+    <div class="game-tag">
+      <span>{{games.gamePublisher}}</span>
+    </div>
+  </div>
+  <div class="reviews" *ngFor="let review of games?.review">
+    <span>{{review.description}}</span>
+  </div>
+  <div class="button-paginate">
+    <button (click)="prevPage()"> < </button>
+    <button (click)="nextPage()"> > </button>
+  </div>
+  <div class="insert-review">
+    <label for="">Review</label>
+    <input type="text" #review>
+    <label for="">Recommended</label>
+    <input type="checkbox" #recommend>
+    <button (click)="addReview(review.value, recommend.checked)">Review!</button>
+  </div>
+  <section class="map">
+    <mgl-map
+      [interactive]="false"
+      [style]="'mapbox://styles/mapbox/streets-v9'"
+    >
+      <ng-container *ngFor="let data of games?.gameCountry">
+        <mgl-marker
+          #marker
+          [lngLat]="[data.country.longitude, data.country.latitude]"
+        ></mgl-marker>
+        <mgl-popup [marker]="marker">
+          <h2>{{ data.count }}</h2>
+        </mgl-popup>
+      </ng-container>
+    </mgl-map>
+  </section>
+</div>

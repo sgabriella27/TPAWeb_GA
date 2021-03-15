@@ -1,0 +1,20 @@
+<div class="friends" *ngIf="user">
+  <div *ngIf="useWallet">
+    <button (click)="checkout(true)">Checkout</button>
+  </div>
+  <div *ngIf="!useWallet">
+    <h1>Payment Form</h1>
+    <button (click)="checkout(true)">Checkout</button>
+  </div>
+
+  <h1>Gift to Friend</h1>
+  <select #friend>
+    <option *ngFor="let friend of user.friends" [value]="friend.friendID">
+      {{ friend.friend.displayName }}
+    </option>
+  </select>
+  <label for="">Message</label>
+  <input type="text">
+  <button (click)="gift(friend.value)">Gift</button>
+</div>
+

@@ -1,0 +1,11 @@
+<h1>Recommended Games</h1>
+<p *ngFor="let game of discoveryGame">
+  <img [src]="showFile(game.id)" alt="">
+  {{ game.gameTitle }}
+</p>
+
+<h1>New Games</h1>
+<p *ngFor="let game of newGames">
+  <img [src]="showFile(game.id)" alt="">
+  {{ game.gameTitle }}
+</p>

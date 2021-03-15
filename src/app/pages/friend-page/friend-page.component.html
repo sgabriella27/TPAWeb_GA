@@ -1,0 +1,25 @@
+<div id="container" *ngIf="user">
+  <span>your friend code : {{user.friendCode}}</span>
+  <h2>ADD FRIEND BY CODE</h2>
+  <div>
+    <input type="text" #input>
+    <button (click)="addByCode(input.value)">Submit</button>
+  </div>
+  <h2>FRIEND</h2>
+  <div class="content" *ngFor="let f of user.friends">
+    {{f.friend.displayName}}
+    <img src="assets/{{f.friend.profilePic}}" alt="">
+    {{f.friend.level}}
+    {{f.friend.status}}
+  </div>
+  <h2>FRIEND REQUEST</h2>
+  <div class="content" *ngFor="let f of user.friendRequest">
+    {{f.friend.displayName}}
+    <img src="assets/{{f.friend.profilePic}}" alt="">
+    {{f.friend.level}}
+    {{f.friend.status}}
+    <button (click)="acceptFriend(f.friend.id)">Accept Friend</button>
+    <button (click)="rejectFriend(f.friend.id)">Reject Friend</button>
+    <button (click)="ignoreFriend(f.friend.id)">Ignore Friend</button>
+  </div>
+</div>

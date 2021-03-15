@@ -10,14 +10,15 @@ import {Router} from '@angular/router';
 })
 export class ManagePromoComponent implements OnInit {
   game: any[] = [];
+  page = 1;
 
   constructor(private apollo: Apollo, private sanitizer: DomSanitizer, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.apollo.query<{ getGame: any }>({
-      query: gql`query getGame {
-        getGame {
+    this.apollo.query<{ getGamePaginate: any }>({
+      query: gql`query getGame($page: Int!) {
+        getGamePaginate(page: $page) {
           id
           gameTitle
           gameBanner
@@ -25,9 +26,9 @@ export class ManagePromoComponent implements OnInit {
             discountPromo
           }
         }
-      }`
+      }`, variables: {page: this.page}
     }).subscribe(res => {
-      this.game = res.data?.getGame;
+      this.game = res.data?.getGamePaginate;
     });
   }
 
@@ -45,6 +46,36 @@ export class ManagePromoComponent implements OnInit {
       }`, variables: {id}
     }).subscribe(resp => {
       alert('Delete Promo Success!');
+    });
+  }
+
+  prevPage() {
+    this.page--;
+    this.apollo.query<{ getGamePaginate: any }>({
+      query: gql`query getGamePaginate($page: Int!) {
+        getGamePaginate(page: $page) {
+          id
+          gameTitle
+          gameBanner
+        }
+      }`, variables: {page: this.page}
+    }).subscribe(res => {
+      this.game = res.data?.getGamePaginate;
+    });
+  }
+
+  nextPage() {
+    this.page++;
+    this.apollo.query<{ getGamePaginate: any }>({
+      query: gql`query getGamePaginate($page: Int!) {
+        getGamePaginate(page: $page) {
+          id
+          gameTitle
+          gameBanner
+        }
+      }`, variables: {page: this.page}
+    }).subscribe(res => {
+      this.game = res.data?.getGamePaginate;
     });
   }
 }

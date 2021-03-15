@@ -1,0 +1,9 @@
+<p *ngFor="let item of user?.items" [routerLink]="['/inventory', item.gameItem.id]">
+  <img src="{{item.gameItem.gameItemImg}}" alt="">
+  {{ item.gameItem.gameItemName }}
+  <button (click)="sellItem(item.gameItem.id)">sell</button>
+</p>
+<div class="button-paginate">
+  <button (click)="prevPage()"> < </button>
+  <button (click)="nextPage()"> > </button>
+</div>

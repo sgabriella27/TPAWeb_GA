@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {logging} from 'protractor';
+import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './pages/login/login.component';
 import {RegisterComponent} from './pages/register/register.component';
 import {HomeComponent} from './pages/home/home.component';
@@ -17,7 +16,6 @@ import {CommunityComponent} from './pages/community/community.component';
 import {CommunityDetailComponent} from './pages/community-detail/community-detail.component';
 import {ReviewDetailComponent} from './pages/review-detail/review-detail.component';
 import {DiscussionDetailComponent} from './pages/discussion-detail/discussion-detail.component';
-import {extractDirectiveTypeCheckMeta} from '@angular/compiler-cli/src/ngtsc/metadata';
 import {EditProfileComponent} from './pages/edit-profile/edit-profile.component';
 import {EditAvatarComponent} from './pages/edit-avatar/edit-avatar.component';
 import {EditThemeComponent} from './pages/edit-theme/edit-theme.component';
@@ -36,6 +34,16 @@ import {EditProfileHomeComponent} from './pages/edit-profile-home/edit-profile-h
 import {ChatRoomComponent} from './pages/chat-room/chat-room.component';
 import {ChatHomeComponent} from './pages/chat-home/chat-home.component';
 import {BadgePageComponent} from './pages/badge-page/badge-page.component';
+import {FriendPageComponent} from './pages/friend-page/friend-page.component';
+import {InventoryComponent} from './pages/inventory/inventory.component';
+import {InventoryDetailComponent} from './pages/inventory-detail/inventory-detail.component';
+import {GameDetailComponent} from './pages/game-detail/game-detail.component';
+import {WishlistPageComponent} from './pages/wishlist-page/wishlist-page.component';
+import {DiscoveryComponent} from './pages/discovery/discovery.component';
+import {StreamComponent} from './pages/stream/stream.component';
+import {BroadcastComponent} from './pages/broadcast/broadcast.component';
+import {CartComponent} from './pages/cart/cart.component';
+import {CheckoutComponent} from './pages/checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -108,6 +116,10 @@ const routes: Routes = [
     component: EditProfileComponent
   },
   {
+    path: 'discovery',
+    component: DiscoveryComponent
+  },
+  {
     path: 'edit/avatar',
     component: EditAvatarComponent
   },
@@ -174,6 +186,42 @@ const routes: Routes = [
   {
     path: 'badge/page',
     component: BadgePageComponent
+  },
+  {
+    path: 'friend',
+    component: FriendPageComponent
+  },
+  {
+    path: 'inventory',
+    component: InventoryComponent
+  },
+  {
+    path: 'inventory/:id',
+    component: InventoryDetailComponent
+  },
+  {
+    path: 'game/detail/:id',
+    component: GameDetailComponent
+  },
+  {
+    path: 'wishlist',
+    component: WishlistPageComponent
+  },
+  {
+    path: 'stream',
+    component: StreamComponent
+  },
+  {
+    path: 'broadcast',
+    component: BroadcastComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent
   }
 ];
 
