@@ -29,6 +29,7 @@ export class ChatHomeComponent implements OnInit {
           friends {
             friendID,
             friend {
+              id
               displayName
             }
           }

@@ -1,0 +1,15 @@
+@import "src/style/color";
+
+main {
+  background-color: $main-background2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $points-type;
+  font-family: "Helvetica";
+
+  img {
+    width: 20vw;
+  }
+}

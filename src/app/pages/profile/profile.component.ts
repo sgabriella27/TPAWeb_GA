@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   allActivities: any;
   page = 1;
   aku: any;
+  bgURL: any;
 
   constructor(private fb: FormBuilder, private apollo: Apollo, private router: Router, private route: ActivatedRoute) {
   }
@@ -73,6 +74,9 @@ export class ProfileComponent implements OnInit {
           miniBackground {
             itemImg
           }
+          background {
+            itemImg
+          }
           profileComment(page: $page) {
             user {
               displayName
@@ -84,6 +88,7 @@ export class ProfileComponent implements OnInit {
     }).subscribe(res => {
       console.log(res.data);
       this.user = res.data?.getUserByCustomURL;
+      this.bgURL = res.data.getUserByCustomURL.background.itemImg;
     });
   }
 
@@ -181,6 +186,9 @@ export class ProfileComponent implements OnInit {
           miniBackground {
             itemImg
           }
+          background {
+            itemImg
+          }
           profileComment(page: $page) {
             user {
               displayName
@@ -220,6 +228,9 @@ export class ProfileComponent implements OnInit {
             itemImg
           }
           miniBackground {
+            itemImg
+          }
+          background {
             itemImg
           }
           profileComment(page: $page) {

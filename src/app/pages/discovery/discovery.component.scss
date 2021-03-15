@@ -1,0 +1,43 @@
+@import "src/style/color";
+
+main {
+  background-color: $main-background2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $points-type;
+  font-family: "Helvetica";
+
+  img {
+    width: 20vw;
+  }
+}
+
+.header {
+  background-color: $edit-profile-header;
+  color: #f4f4f4;
+  padding: 10px 20px;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  span {
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.games {
+  background-color: $card-background;
+  width: 40vw;
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3vw;
+
+  img {
+    width: 10vw;
+  }
+}

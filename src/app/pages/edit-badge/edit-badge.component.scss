@@ -1,0 +1,76 @@
+@import "src/style/color";
+
+main {
+  background-color: $main-background2;
+}
+
+#container {
+  font-family: Roboto, sans-serif;
+  width: 50%;
+  height: 100%;
+  min-height: 850px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.header {
+  background-color: $edit-profile-header;
+  color: #f4f4f4;
+  padding: 10px 20px;
+  span {
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.content {
+  background-color: rgba(0,0,0,.4);
+  margin-top: 10px;
+}
+
+.badge {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.badge-text {
+  padding-bottom: 10px;
+
+  span {
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.owned-badge {
+  padding-left: 20px;
+}
+
+.badge-txt {
+  padding-bottom: 10px;
+
+  span {
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.list-badge {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding-bottom: 3vh;
+}
+
+.badges {
+  img {
+    width: 100px;
+    transition: 0.4s;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+  }
+}

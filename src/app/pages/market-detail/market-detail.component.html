@@ -1,37 +1,41 @@
 <app-navbar></app-navbar>
-<div id="container" *ngIf="gameItem">
-  {{gameItem.gameItemName}}
-  {{gameItem.gameItemDesc}}
-  <img src="{{gameItem.gameItemImg}}" alt="">
-  {{gameItem.game.gameTitle}}
-  <div class="market-sales" *ngFor="let m of marketGameItem">
-    <div class="bid" *ngIf="m.type == 'bid'">
-      <span>bid</span>
-      {{m.price}}
+<main>
+  <div id="container" *ngIf="gameItem">
+    {{gameItem.gameItemName}}
+    {{gameItem.gameItemDesc}}
+    <img src="{{gameItem.gameItemImg}}" alt="">
+    {{gameItem.game.gameTitle}}
+    <div class="market-sales" *ngFor="let m of marketGameItem">
+      <div class="bid" *ngIf="m.type == 'bid'">
+        <span>bid</span>
+        <span>{{m.price}}</span>
+      </div>
+      <div class="offer" *ngIf="m.type == 'offer'">
+        <span>offer</span>
+        <span>{{m.price}}</span>
+      </div>
     </div>
-    <div class="offer" *ngIf="m.type == 'offer'">
-      <span>offer</span>
-      {{m.price}}
+    <div class="button">
+      <div class="buyItem">
+        <button (click)="insertBuyListing()">Buy</button>
+      </div>
+      <div class="sellItem">
+        <button (click)="insertSellListing()">Sell</button>
+      </div>
     </div>
-  </div>
-  <div class="buyItem">
-    <button (click)="insertBuyListing()">Buy</button>
-  </div>
-  <div class="sellItem">
-    <button (click)="insertSellListing()">Sell</button>
-  </div>
-  <div class="market-listing" *ngFor="let l of marketGameListing">
-    <div class="sell" *ngIf="l.type == 'offer'">
-      <span>Sell</span>
-      <p>you are selling {{l.price}}</p>
+    <div class="market-listing" *ngFor="let l of marketGameListing">
+      <div class="sell" *ngIf="l.type == 'offer'">
+        <span>Sell</span>
+        <p>you are selling {{l.price}}</p>
+      </div>
+      <div class="buy" *ngIf="l.type == 'bid'">
+        <span>Buy</span>
+        <p>you are buying {{l.price}}</p>
+      </div>
     </div>
-    <div class="buy" *ngIf="l.type == 'bid'">
-      <span>Buy</span>
-      <p>you are buying {{l.price}}</p>
+    <div class="recent-activity" *ngIf="recentActivity">
+      {{recentActivity}}
     </div>
+    <canvas baseChart chartType="line" [datasets]="chartData" [labels]="labelData"></canvas>
   </div>
-  <div class="recent-activity" *ngIf="recentActivity">
-    {{recentActivity}}
-  </div>
-  <canvas baseChart chartType="line" [datasets]="chartData" [labels]="labelData"></canvas>
-</div>
+</main>

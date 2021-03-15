@@ -1,12 +1,19 @@
-<div id="container" *ngIf="user">
-  <p *ngFor="let cart of user.cart">
-    <img [src]="showFile(cart.game.id)" alt="">
-    {{ cart.game.gameTitle }}
-    {{ cart.game.gamePrice }}
-    <button (click)="remove(cart.game.id)">Remove</button>
-  </p>
+<app-navbar></app-navbar>
+<main>
+  <div id="container" *ngIf="user">
+    <div *ngFor="let cart of user.cart">
+      <div class="cart-item">
+        <img [src]="showFile(cart.game.id)" alt="">
+        {{ cart.game.gameTitle }}
+        {{ cart.game.gamePrice }}
+        <button (click)="remove(cart.game.id)">Remove</button>
+      </div>
+    </div>
 
-  <p>Subtotal: {{ subtotal }}</p>
+    <div class="total">
+      <p>Subtotal: {{ subtotal }}</p>
 
-  <button routerLink="/checkout">Checkout</button>
-</div>
+      <button routerLink="/checkout">Checkout</button>
+    </div>
+  </div>
+</main>

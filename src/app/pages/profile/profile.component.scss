@@ -1,0 +1,29 @@
+@import "src/style/color";
+
+#constructor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $points-type;
+  font-family: "Helvetica";
+
+  img {
+    width: 10vw;
+  }
+}
+
+.img {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $card-background;
+  width: 20vw;
+  height: 10vh;
+}

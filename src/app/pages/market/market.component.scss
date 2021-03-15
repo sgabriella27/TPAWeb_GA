@@ -1,0 +1,47 @@
+@import "src/style/color";
+
+main {
+  background-color: $main-background2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $points-type;
+  font-family: "Helvetica";
+
+  img {
+    width: 20vw;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $points-type;
+}
+
+.button-paginate {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  width: 4vw;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1vw;
+    height: 2vh;
+    background-color: $paginate-button-background;
+    border: none;
+    color: $points-type;
+  }
+
+  button:hover {
+    background-color: $paginate-button;
+    color: $paginate-button-background;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}

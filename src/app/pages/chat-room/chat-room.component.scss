@@ -1,0 +1,80 @@
+@import "src/style/color";
+
+main {
+  background-color: $main-background2;
+  user-select: none;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $points-type;
+  font-family: "Helvetica";
+}
+
+.chat {
+  width: 20vw;
+  height: 4vh;
+  margin: 2vh;
+  background-color: $card-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    color: $points-type;
+    font-size: 0.8vw;
+    font-family: "Helvetica";
+  }
+}
+
+.friend-chat {
+  width: 20vw;
+  height: 4vh;
+  margin: 2vh;
+  background-color: $card-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    color: $points-type;
+    font-size: 0.8vw;
+    font-family: "Helvetica";
+  }
+}
+
+.input {
+  textarea {
+    width: 20vw;
+    margin: 2vh;
+    height: 7vh;
+    background-color: $card-hover;
+    color: $points-type;
+  }
+}
+
+.button-chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    background-color: $paginate-button-background;
+    font-family: "Helvetica";
+    font-size: 1vw;
+    border: none;
+    width: 10vw;
+    height: 3vh;
+    color: $points-type;
+    border-radius: 0.1vw;
+  }
+
+  button:hover {
+    border: 1px solid $paginate-button;
+    cursor: pointer;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}

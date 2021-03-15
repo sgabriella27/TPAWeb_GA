@@ -1,6 +1,9 @@
-<div id="container" *ngIf="gameItem">
-  <img src="{{gameItem.gameItemImg}}" alt="">
-  {{ gameItem.gameItemName }}
-  {{gameItem.gameItemDesc}}
-  <canvas baseChart chartType="line" [datasets]="chartData" [labels]="labelData"></canvas>
-</div>
+<app-navbar></app-navbar>
+<main>
+  <div id="container" *ngIf="gameItem">
+    <img src="{{gameItem.gameItemImg}}" alt="">
+    {{ gameItem.gameItemName }}
+    {{gameItem.gameItemDesc}}
+    <canvas baseChart chartType="line" [datasets]="chartData" [labels]="labelData"></canvas>
+  </div>
+</main>

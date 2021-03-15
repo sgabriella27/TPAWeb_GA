@@ -1,0 +1,91 @@
+@import "src/style/color";
+
+main {
+  background-color: $main-background2;
+  user-select: none;
+  height: 100vh;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  background-color: $edit-profile-header;
+  color: #f4f4f4;
+  padding: 10px 20px;
+  margin-top: 3vh;
+  width: 30vw;
+  span {
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.friends-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3vh;
+}
+
+.friends {
+  background-color: $card-background;
+  width: 32.5vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 6vh;
+  transition: 0.3s;
+  margin-top: 2vh;
+}
+
+.friend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    color: $points-type;
+    font-family: "Helvetica";
+  }
+}
+
+.chat-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    background-color: $paginate-button-background;
+    font-family: "Helvetica";
+    font-size: 1vw;
+    border: none;
+    width: 10vw;
+    height: 3vh;
+    color: $points-type;
+    border-radius: 0.1vw;
+  }
+
+  button:hover {
+    border: 1px solid $paginate-button;
+    cursor: pointer;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+.friends:hover {
+  transform: scale(1.017);
+}
+
+
+

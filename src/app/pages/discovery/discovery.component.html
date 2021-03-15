@@ -1,11 +1,22 @@
-<h1>Recommended Games</h1>
-<p *ngFor="let game of discoveryGame">
-  <img [src]="showFile(game.id)" alt="">
-  {{ game.gameTitle }}
-</p>
+<app-navbar></app-navbar>
+<main>
+  <div class="header">
+    <span>Recommended Games</span>
+  </div>
+  <div *ngFor="let game of discoveryGame">
+    <div class="games">
+      <img [src]="showFile(game.id)" alt="">
+      <span>{{ game.gameTitle }}</span>
+    </div>
+  </div>
 
-<h1>New Games</h1>
-<p *ngFor="let game of newGames">
-  <img [src]="showFile(game.id)" alt="">
-  {{ game.gameTitle }}
-</p>
+  <div class="header">
+    <span>New Games</span>
+  </div>
+  <div *ngFor="let game of newGames">
+    <div class="games">
+      <img [src]="showFile(game.id)" alt="">
+      {{ game.gameTitle }}
+    </div>
+  </div>
+</main>

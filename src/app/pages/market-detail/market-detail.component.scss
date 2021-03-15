@@ -1,0 +1,48 @@
+@import "src/style/color";
+
+main {
+  background-color: $main-background2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $points-type;
+  font-family: "Helvetica";
+
+  img {
+    width: 20vw;
+  }
+}
+
+.bid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.offer {
+  display: flex;
+}
+.button {
+  display: flex;
+
+  button {
+    background-color: $paginate-button-background;
+    font-family: "Helvetica";
+    font-size: 1vw;
+    border: none;
+    width: 10vw;
+    height: 3vh;
+    color: $points-type;
+    border-radius: 0.1vw;
+  }
+
+  button:hover {
+    border: 1px solid $paginate-button;
+    cursor: pointer;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+

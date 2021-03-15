@@ -1,0 +1,37 @@
+@import "src/style/color";
+
+main {
+  background-color: $main-background2;
+  user-select: none;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $points-type;
+  font-family: "Helvetica";
+}
+
+#container {
+  img {
+    width: 10vw;
+  }
+}
+
+.cart-item {
+  width: 40vw;
+  height: 20vh;
+  background-color: $card-background;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.total {
+  width: 40vw;
+  height: 10vh;
+  margin-top: 3vh;
+  background-color: $card-hover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

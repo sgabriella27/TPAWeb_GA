@@ -1,7 +1,21 @@
 <app-navbar></app-navbar>
-<div id="container" *ngIf="user">
-  <div class="backgrounds" *ngFor="let f of user.ownedBackground"
-       (click)="saveBackground(f.id)">
-    <img src="assets/Point%20Shop/{{f.itemImg}}" alt="">
+<main>
+  <div id="container" *ngIf="user">
+    <div class="header">
+      <span>BACKGROUND</span>
+    </div>
+    <div class="content">
+      <div class="owned-background">
+        <div class="background">
+          <span>Your Background</span>
+        </div>
+        <div class="list-backgrounds">
+          <div class="backgrounds" *ngFor="let f of user.ownedBackground"
+               (click)="saveBackground(f.id)">
+            <img src="assets/Point%20Shop/{{f.itemImg}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</main>
